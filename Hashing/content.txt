@@ -1,0 +1,8 @@
+Hashing is a technique to map data (keys) to a fixed-size table (array) using a special function called a hash function.
+Hashing = Pre-storing + Fetching
+.................................
+
+1. Number Hashing
+2. character Hashing
+3. Hashing by "map"
+4. Hashing by "Unordered map"

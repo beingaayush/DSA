@@ -1,0 +1,9 @@
+2 sum
+2 sum II | (leetcode 167)
+Remove Duplicates  | (leetcode 26, leetcode 80)
+Merge sorted array - (2 sorted arr ko 1 arr me merge kro) | (leetcode 88)
+Squaring a sorted array | (leetcode 977)
+3 sum | (leetcode 15)
+3 sum closest | (leetcode 16)
+3 sum smaller | (leetcode 259)
+Sort colors | (leetcode 75) | Dutch National Flag Algorithm

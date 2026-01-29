@@ -1,0 +1,6 @@
+// ALL RELATES -  TO DYNAMIC PROGRAMMING \\
+Maximum subarray | PURE KADANE'S | leetcode 53 
+Maximum Product Subarray | leetcode 152
+Maximum Subarray Sum with One Deletion | leetcode 1186
+Maximum Absolute Sum of Any Subarray | leetcode 1749
+Maximum Sum Circular Subarray | leetcode 918

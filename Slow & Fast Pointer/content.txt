@@ -1,0 +1,5 @@
+Linked List Cycle | leetcode 141
+Linked List Cycle 2 | leetcode 142
+Middle of the Linked List | leetcode 876
+Find the duplicate | leetcode 287
+happy numbers | leetcode 202

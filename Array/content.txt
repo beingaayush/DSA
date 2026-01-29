@@ -1,0 +1,15 @@
+largest element
+second largest element
+second smallest element
+check if the array is sorted
+remove duplicates from sorted arr
+left rotate an array by one place
+left rotate an array by k place
+move all zeroes to end of the array
+Linear Search
+--------------
+find missing number from an array
+find maximum consequtive ones in an array
+find the number that appears once in the array
+..............
+Majority element

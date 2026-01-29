@@ -1,0 +1,9 @@
+Maximum Sum of subarray
+Minimum size subarray sum | leetcode 209
+Longest subString without repeating characters | leetcode 3
+Fruits into basket | leetcode 904
+Longest substring with at most k distinct character | leetcode 340
+Longest repeating character replacement | leetcode 424
+Max consecutive ones 1's | leetcode 1004
+Maximum Points you can obtain from cards | leetcode 1423 
+Minimum Window Substring | leetcode 76

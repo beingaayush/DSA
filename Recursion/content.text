@@ -1,0 +1,9 @@
+ print n times
+ print 1 to n
+ print n to 1
+ parameterised (sum of n numbers)
+ functional (sum of n numbers)
+ factorial   
+ Reverse an array
+ check string is palindrome or not
+ multiple recursion calls (fabonacci number) eg - 0 1 1 2 3 5 8........ (for next - add last 2)
