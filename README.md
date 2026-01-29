@@ -1,4 +1,5 @@
 # Along with Data structures, Patterns are also covered.
+# Language Used : C++
 
 # Each subfolder contains a content.txt file, 
 and the file contains - The problem names along with their LeetCode numbers.
