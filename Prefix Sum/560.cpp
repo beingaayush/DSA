@@ -1,7 +1,6 @@
 // Problem Statement:-
 // You’re given an integer array nums and an integer k.
 // Count how many continuous subarrays have sum exactly equal to k.
-
 #include <bits/stdc++.h>
 using namespace std;
 class Solution{
