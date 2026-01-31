@@ -1,4 +1,4 @@
-// ALL RELATES -  TO DYNAMIC PROGRAMMING \\
+// ALL RELATES TO - DYNAMIC PROGRAMMING \\
 Maximum subarray | PURE KADANE'S | leetcode 53 
 Maximum Product Subarray | leetcode 152
 Maximum Subarray Sum with One Deletion | leetcode 1186
