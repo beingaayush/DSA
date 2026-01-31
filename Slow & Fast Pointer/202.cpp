@@ -1,6 +1,7 @@
 // Problem Statement:
 // Write an algorithm to determine whether a number n is a happy number.
 // A number is called happy if the following process eventually ends in 1:
+// Core Idea:- 
 // Start with any positive integer.
 // Replace the number by the sum of the squares of its digits.
 // Repeat the process.
@@ -14,8 +15,8 @@ using namespace std;
 int sumOfSquares(int n) {
     int sum = 0;
     while (n > 0) {
-        int d = n % 10;
-        n = n / 10;
+        int d = n % 10;  //extract last digit
+        n = n / 10;     //remove last digit
         sum += d * d;
     }
     return sum;
@@ -32,7 +33,6 @@ bool isHappy(int n) {
         if (slow == fast && slow != 1) 
             return false;
     } while (fast != 1);
-
     return true;
 }
 
