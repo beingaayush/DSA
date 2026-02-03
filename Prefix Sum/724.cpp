@@ -1,5 +1,5 @@
 // Problem Statement:-
-// Find Pivot Index requires you to find the pivot index of an array of integers. 
+// find the pivot index of an array of integers. 
 // The pivot index is defined as the index where the sum of all numbers strictly to the left 
 // is equal to the sum of all numbers strictly to the right. 
 // If no such index exists, return -1. 

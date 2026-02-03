@@ -20,8 +20,8 @@ public:
        for(int i=0;i<nums.size(); i++){
         if(nums[i] == 0) nums[i] = -1;
         prefix += nums[i];
-        //if prefix is seen in the map, then updte subarr len as ("curr idx - where prefix seen" distance)
-        if(mpp.find(prefix) != mpp.end()){
+        //if prefix is seen in the map, then updte subarr len as ("curr idx - where prefix seen idx" distance)
+        if(mpp.find(prefix) != mpp.end()){  //checks - kya prefix map me exists karta hai?
             maxLen = max(maxLen, i - mpp[prefix]);
         }
         else{

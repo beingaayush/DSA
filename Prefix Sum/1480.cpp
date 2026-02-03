@@ -1,7 +1,7 @@
 // Problem Statement:-
 // Given an integer array nums, return an array runningSum where:
 // runningSum[i] = sum of nums[0] + nums[1] + ... + nums[i]
-
+// basically Track and store every sum at every index, while iterating
 #include <bits/stdc++.h>
 using namespace std;
 
