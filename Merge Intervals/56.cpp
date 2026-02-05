@@ -17,7 +17,7 @@
 // ans.back() = ans ka last merged interval
 // Example:
 // Agar ans = [[1,6], [8,10]]
-// to ans.back() = [8,10]
+// toh ans.back() = [8,10]         //ans.back()[0] = 8  || ans.back()[1] = 10
 
 #include <bits/stdc++.h>
 using namespace std;
