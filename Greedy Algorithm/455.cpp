@@ -18,7 +18,8 @@ public:
         sort(cookies.begin(), cookies.end());
 
         while(i < greed.size() && j < cookies.size()){
-            if(cookies[j] >= greed[i]){
+            //child only satisfy when equal OR more cookie than his greed can assigned
+            if(greed[i] <= cookies[j]){
                 i++;
             }
             j++;
