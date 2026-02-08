@@ -1,1 +1,1 @@
-leetcode 1047
+Remove all adjacent dupliactes in string | leetcode 1047
