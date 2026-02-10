@@ -4,7 +4,7 @@
 // Core idea (no fluff):
 // Monotonic decreasing stack + simulate circular array by iterating 2n times.
 // Push indices only in the first pass. Resolve answers when a greater element appears.
-
+// ( imagine the array 2 times :) ) -> arr = [1,2,1] then --> [1,2,1][1,2,1]
 
 
 #include<bits/stdc++.h>
@@ -13,7 +13,7 @@ class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
 
-        int n = nums.size();              // array ka size
+        int n = nums.size();              
         vector<int> res(n, -1);           // answer array, default -1
 
         stack<int> st;                    // stack me direct VALUES rahengi
@@ -39,7 +39,7 @@ public:
             st.push(nums[idx]);
         }
 
-        return res;                       // final answer
+        return res;                       
     }
 };
 int main(){
