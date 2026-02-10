@@ -1,2 +1,3 @@
 Remove all adjacent dupliactes in string | leetcode 1047
 Valid Parentheses | leetcode 20
+Next Greater element | leetcode 503
