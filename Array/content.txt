@@ -8,8 +8,8 @@ left rotate an array by k place
 move all zeroes to end of the array
 Linear Search
 --------------
-find missing number from an array
-find maximum consequtive ones in an array
-find the number that appears once in the array
+find missing number from an array                   | Not coded
+find maximum consequtive ones in an array           | Not coded
+find the number that appears once in the array      | Not coded
 ..............
 Majority element
