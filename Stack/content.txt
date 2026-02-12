@@ -1,4 +1,11 @@
 Remove all adjacent dupliactes in string | leetcode 1047
 Valid Parentheses | leetcode 20
-Next Greater element | leetcode 503
+Next Greater element ii | leetcode 503
+Daily Temperatures | leetcode 739
+
+
+
+
+
+
 Min Stack | leetcode 155
