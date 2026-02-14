@@ -9,3 +9,4 @@ Squaring a sorted array | (leetcode 977)
 Sort colors | (leetcode 75) | Dutch National Flag Algorithm
 Valid Palindrome | leetcode 125
 Reverse String | leetcode 340
+Trapping Rainwater | leetcode 42
