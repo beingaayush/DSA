@@ -1,0 +1,16 @@
+These 4 monotonic stack pattern / questions will solve 90% stack questions.
+(Monotonoic - greater/smaller/next/previous)
+
+# Next Greater Right | NGR
+# Next Greater Left  | NGL
+# Next Smaller Right | NSR
+# Next Smaller Left  | NSL
+
+
+** One-line Rule Sheet **
+
+Greater chahiye  → pop while <=
+Smaller chahiye  → pop while >=
+
+Right chahiye    → loop i = n-1 → 0
+Left chahiye     → loop i = 0 → n-1
