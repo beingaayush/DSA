@@ -13,3 +13,6 @@ find maximum consequtive ones in an array           | Not coded
 find the number that appears once in the array      | Not coded
 ..............
 Majority element
+
+|| OTHERS ||
+Find numbers of even number of digits | leetcode 1295
