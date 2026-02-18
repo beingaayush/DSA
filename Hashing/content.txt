@@ -2,6 +2,7 @@ Hashing is a technique to map data (keys) to a fixed-size table (array) using a 
 Hashing = Pre-storing + Fetching
 .................................
 
+# Foundation
 1. Number Hashing
 2. character Hashing
 3. Hashing by "map"
