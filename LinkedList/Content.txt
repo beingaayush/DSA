@@ -1,4 +1,4 @@
 || Introduction -> Declaration&Traversal -> insertion -> deletion ||
 
 DSA questions:- 
-
+Reverse nodes in k-groups | leetcode 25
