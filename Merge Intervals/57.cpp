@@ -22,12 +22,14 @@ public:
             i++;
         }
         //if overlaps
+        //(this loop is came cause above loop doesn't satisfied and here overlapping is happening)
         while(i<n && arr[i][0] <= interval[1]){
             interval[0] = min(interval[0], arr[i][0]);
             interval[1] = max(interval[1], arr[i][1]);
             i++;
         }
         res.push_back(interval);
+        //edge case
         while(i<n){
             res.push_back(arr[i]);
             i++;
