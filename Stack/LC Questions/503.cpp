@@ -38,7 +38,6 @@ public:
             // current value stack me daal do
             st.push(nums[idx]);
         }
-
         return res;                       
     }
 };
