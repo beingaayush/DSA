@@ -36,7 +36,7 @@ Sorted array ⇒ use Binary Search.
 => If not found → return -1
 
 ## Overflow Case
-=> The Overflow Problem, If you calculate mid like this:-  mid = (low + high) / 2
+=> The Overflow Problem, If you calculate mid like this:-  **[  mid = (low + high) / 2  ]** 
 This can overflow when low and high are large integers.
 
 Why?
@@ -49,7 +49,7 @@ Result → integer overflow → wrong mid → undefined behavior
 Even if array size is within limits, interviews expect you to write overflow-safe logic.
 
 => Correct Way (Overflow Safe)
-mid = low + (high - low) / 2
+# mid = low + (high - low) / 2
 
 Why this works:
 (high - low) is always safe because it’s within array bounds.
