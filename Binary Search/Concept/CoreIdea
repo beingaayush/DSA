@@ -1,0 +1,36 @@
+The classical concept is simple:
+You don’t search linearly.
+You repeatedly divide the search space into two halves.
+
+## Here’s the logic in pure thinking terms:-
+
+=> Look at the middle element.
+
+=> Compare it with the target.
+
+=> If it matches → done.
+
+=> If the target is smaller → ignore the right half completely.
+
+=> If the target is larger → ignore the left half completely.
+
+
+Repeat the same process on the remaining half.
+Each comparison removes half of the remaining elements.
+So instead of checking one-by-one (like linear search), you eliminate large portions instantly.
+
+That’s why:
+
+Linear search → checks one element at a time → O(n)
+Binary search → cuts space in half every time → O(log n)
+
+## Compact Core Idea
+Sorted array ⇒ use Binary Search.
+
+=> Keep two pointers: low = 0, high = n - 1
+=> While low <= high:
+=> mid = low + (high - low) / 2
+=> If nums[mid] == target → return mid
+=> If smaller → move right → low = mid + 1
+=> If larger → move left → high = mid - 1
+=> If not found → return -1
