@@ -34,3 +34,24 @@ Sorted array ⇒ use Binary Search.
 => If smaller → move right → low = mid + 1
 => If larger → move left → high = mid - 1
 => If not found → return -1
+
+## Overflow Case
+=> The Overflow Problem, If you calculate mid like this:-  mid = (low + high) / 2
+This can overflow when low and high are large integers.
+
+Why?
+Because low + high might exceed the maximum value an int can store.
+
+For example (conceptually):
+Suppose both are close to 2,000,000,000
+Their sum exceeds the 32-bit integer limit (~2.1 billion)
+Result → integer overflow → wrong mid → undefined behavior
+Even if array size is within limits, interviews expect you to write overflow-safe logic.
+
+=> Correct Way (Overflow Safe)
+mid = low + (high - low) / 2
+
+Why this works:
+(high - low) is always safe because it’s within array bounds.
+You are not adding two large numbers directly.
+So no risk of exceeding integer limit.
