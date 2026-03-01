@@ -55,3 +55,8 @@ Why this works:
 (high - low) is always safe because it’s within array bounds.
 You are not adding two large numbers directly.
 So no risk of exceeding integer limit.
+
+# Important Understanding
+
+Binary search jab fail hota hai (target nahi milta),
+tab low pointer exactly us position pe hota hai jaha target insert hoga.
