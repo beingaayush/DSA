@@ -1,3 +1,11 @@
+Go through:
+iterativeCode.cpp
+recursiveCode.cpp
+lowerBound.cpp
+upperBound.cpp
+
+
+**************************************************************************************************
 The classical concept is simple:
 You don’t search linearly.
 You repeatedly divide the search space into two halves.
@@ -35,6 +43,8 @@ Sorted array ⇒ use Binary Search.
 => If larger → move left → high = mid - 1
 => If not found → return -1
 
+*****************************************************************************************************
+
 ## Overflow Case
 => The Overflow Problem, If you calculate mid like this:-  **[  mid = (low + high) / 2  ]** 
 This can overflow when low and high are large integers.
@@ -55,6 +65,8 @@ Why this works:
 (high - low) is always safe because it’s within array bounds.
 You are not adding two large numbers directly.
 So no risk of exceeding integer limit.
+
+*****************************************************************************************************
 
 # Important Understanding
 
