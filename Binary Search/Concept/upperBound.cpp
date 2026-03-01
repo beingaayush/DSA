@@ -10,9 +10,9 @@ class Solution{
             int mid = low + (high - low) / 2;
 
             if (arr[mid] > target)
-                high = mid - 1;   // try left side
+                high = mid - 1;   // eliminate right
             else
-                low = mid + 1;    // move right
+                low = mid + 1;    // eliminate left
         }
 
         return low;   // first index where arr[i] > target
