@@ -1,6 +1,5 @@
 // Problem Statement:-
-// You are given:
-// A sorted array nums and a target.
+// You are given: A sorted array nums and a target.
 // Your task is to:
 // Return the starting index and ending index of target in the array.
 // If target does not exist in the array, return: [-1, -1]
