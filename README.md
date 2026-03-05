@@ -1,7 +1,7 @@
 # Language Used : C++
 
 # Each subfolder contains a content.txt file, 
-and the file contains - The problem names along with their LeetCode numbers.
+and the (content.txt) file contains - The problem names along with their LeetCode problem numbers.
 
 # For better understanding and logic implementation, 
 > Always start with content.txt file inside a folder
