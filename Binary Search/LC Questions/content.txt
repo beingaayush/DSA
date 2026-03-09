@@ -8,3 +8,4 @@ Find minimum in Rotated Sorted array II | leetcode 154
 Single Element in Sorted array | leetcode 540
 Find Peak Element | leetcode 162
 Sqrt(X) | leetcode 69
+KOKO eating bananas | leetcode 875
