@@ -70,5 +70,12 @@ So no risk of exceeding integer limit.
 
 # Important Understanding
 
-Binary search jab fail hota hai (target nahi milta),
-tab low pointer exactly us position pe hota hai jaha target insert hoga.
+> Binary search jab fail hota hai (target nahi milta),
+  tab low pointer exactly us position pe hota hai jaha target insert hoga.
+
+> How to know that what to be return in the end - low OR high
+One-liner trick:
+Minimum answer → return low
+Maximum answer → return high
+
+Logic:- low aage badh-badh ke smallest valid value par rukta hai | high peeche hat-hat ke largest valid value par rukta hai.
