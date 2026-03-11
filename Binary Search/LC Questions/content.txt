@@ -10,3 +10,4 @@ Find Peak Element | leetcode 162
 Sqrt(X) | leetcode 69
 KOKO eating bananas | leetcode 875
 Minimum Number of Days to Make m Bouquets | leetcode 1482
+Find the smallest divisor given a threshold | leetcode 1283
