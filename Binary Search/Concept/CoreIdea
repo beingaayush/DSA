@@ -79,3 +79,40 @@ Minimum answer → return low
 Maximum answer → return high
 
 Logic:- low aage badh-badh ke smallest valid value par rukta hai | high peeche hat-hat ke largest valid value par rukta hai.
+
+******************************************************************************************************
+
+Binary search detect karne ka 10-second trick:
+
+Step-1: Question me dekho
+
+Kya ye pucha hai:- minimum / maximum possible value
+Agar haan → doubt strong ho gaya ki binary search on answer lagega.
+
+Step-2: Khud se ek question pucho
+Agar main ek value guess karu (mid), toh kya main check kar sakta hu ki ye possible hai ya nahi?
+Agar check(mid) bana sakte ho → binary search possible.
+
+Example (Smallest Divisor):
+mid = divisor
+sum = ceil(nums[i]/mid)
+if sum <= threshold → possible
+else → not possible
+
+Step-3: Pattern check karo
+
+Agar answers aise behave karte ho: false false false true true true | YA | true true true false false
+→ matlab monotonic behaviour hai → binary search.
+
+Final 10-second formula
+min/max answer
++ check(mid) function
++ monotonic pattern
+= binary search
+Reality check (important)
+
+Agar array sorted ho
+→ binary search on index
+
+Agar answer range search karna ho
+→ binary search on answer
