@@ -12,3 +12,4 @@ KOKO eating bananas | leetcode 875
 Minimum Number of Days to Make m Bouquets | leetcode 1482
 Find the smallest divisor given a threshold | leetcode 1283
 least capacity to ship packages in d days | leetcode 1011
+Aggressive Cows | Magnetic Force betweet two balls | leetcode 1552
