@@ -47,3 +47,67 @@ class Solution{
         return high;
     }    
 };
+
+
+// canPlace() :-
+// Ye function sirf ek kaam karta hai:
+// Check karna ki given distance dist par k cows place ho sakti hain ya nahi.
+
+// Step-by-step :---
+
+// 1️⃣ First cow place karna
+// int count = 1;
+// int last = stalls[0];
+
+// First cow always first stall par rakh dete hain.
+// Isliye count = 1
+// last store karta hai last placed cow ka position.
+
+// Example: stalls = [1,2,4,8,9]
+// First cow: 1
+
+
+// 2️⃣ Remaining stalls check karna
+// for(int i = 1; i < stalls.size(); i++)
+// Ab har next stall check karte hain.
+
+// 3️⃣ Distance condition
+// if(stalls[i] - last >= dist)
+
+// Matlab: current_stall_position - last_cow_position >= dist
+// Agar required distance mil gaya → cow place kar do.
+// Example: dist = 3
+// 1 2 4 8 9
+// ↑
+// last = 1
+
+// Check:
+// 2-1 = 1  ❌
+// 4-1 = 3  ✅ place cow
+
+// Placement:
+// 1   4
+
+// Update:
+// count = 2
+// last = 4
+
+
+// 4️⃣ Next placement
+// Check again:
+// 8-4 = 4  ✅
+
+// Placement:
+// 1   4   8
+
+// count = 3
+
+
+// 5️⃣ Enough cows placed?
+// if(count >= k) return true;
+// Agar k cows place ho gayi → distance possible hai.
+
+
+// 6️⃣ Agar pura loop khatam ho gaya
+// return false;
+// Matlab itni distance maintain karke k cows place nahi ho paayi.
