@@ -105,10 +105,7 @@ Agar answers aise behave karte ho: false false false true true true | YA | true 
 → matlab monotonic behaviour hai → binary search.
 
 Final 10-second formula
-min/max answer
-+ check(mid) function
-+ monotonic pattern
-= binary search
+min/max answer + check(mid) function + monotonic pattern = binary search
 Reality check (important)
 
 Agar array sorted ho

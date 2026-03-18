@@ -1,4 +1,4 @@
-//Statement:- Find the smallest index i such that arr[i] >= target.
+//Statement:- Find the First Element such that arr[i] >= target.
 
 #include <bits/stdc++.h>
 using namespace std;
