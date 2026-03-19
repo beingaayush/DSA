@@ -1,0 +1,5 @@
+Binary Search => Done
+
+NEXT:
+
+Master Recursion -> Tree -> Heap
