@@ -1,0 +1,28 @@
+Recursion: when a function calls itself until a specified condition is met.
+2 types:
+
+1. Parameterised recursion
+
+result → parameter me carry hota hai | void function | side-effect (print / update)
+
+2. Functional recursion
+
+result → return hota hai | clean, mathematical style
+
+-------------------------------------------------------------------------------------
+
+🔥 Kab use kare?
+Parameterised use karo jab:
+
+> print karna hai
+> path track karna hai
+> backtracking me list pass karni hai
+
+👉 Example: subsequences | permutations
+
+Functional use karo jab:
+
+> single value compute karni ho
+> DP / math problems
+
+👉 Example: factorial | fibonacci
