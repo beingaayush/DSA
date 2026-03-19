@@ -2,12 +2,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void fn(int i, int sum){
-    if(i<1){
+void fn(int n, int sum){
+    if(n<1){
         cout << sum;
         return;
     }
-    fn(i-1,sum+i);
+    fn(n-1,sum+n);
 }
 
 int main(){
