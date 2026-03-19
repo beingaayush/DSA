@@ -8,4 +8,4 @@
  factorial   
  Reverse an array
  check string is palindrome or not
- multiple recursion calls (fabonacci number) eg - 0 1 1 2 3 5 8........ (for next - add last 2)
+ multiple recursion calls (fibonacci number) eg - 0 1 1 2 3 5 8........ (for next - add last 2)
