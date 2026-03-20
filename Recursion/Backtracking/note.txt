@@ -1,0 +1,51 @@
+1. Definition:- Backtracking is an algorithmic technique where:
+We build a solution step-by-step
+If a step leads to an invalid state → we undo (backtrack) and try another option
+👉 It is essentially Recursion + Choice + Undo
+
+2. Core Idea:
+> At every step:
+> Choose an option
+> Explore further (recursive call)
+> Undo the choice (backtrack)
+
+3. General Template:
+void solve(parameters){
+    if(base_case){
+        // process result
+        return;
+    }
+
+    for(each choice){
+        // 1. choose
+        make_choice();
+
+        // 2. explore
+        solve(updated_parameters);
+
+        // 3. undo (backtrack)
+        undo_choice();
+    }
+}
+
+4. Key Characteristics:
+> Uses recursion
+> Explores all possible combinations (tree structure)
+> Prunes invalid paths early
+> Requires state rollback
+
+5. When to Use Backtracking
+Use it when:
+> Problem asks for all possible solutions
+> You see keywords like: “all combinations” “all permutations” “subsets” “ways to solve
+
+
+⚠️ Real Insight (important)
+Har backtracking recursion hai.
+Par har recursion backtracking nahi hai.
+
+Simple:🔹 Backtracking kya hai?
+> Recursion + choices + undo (rollback)
+> Har step pe multiple options try karte ho
+> Ek option fail hua → wapas jao (backtrack)
+> Fir next option try karo
