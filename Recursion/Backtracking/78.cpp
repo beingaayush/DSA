@@ -3,6 +3,7 @@
 // The solution set must not contain duplicate subsets.
 // You can return the subsets in any order.
 // CORE IDEA and INTUITION :- 78.txt (file)
+
 // 🔹 Example:-
 // Input: nums = [1,2,3]
 // Output:
@@ -21,9 +22,9 @@
 using namespace std;
 class Solution{
     public:
-        void solve(int idx, vector<int> &nums, vector<int> &temp, vector<vector<int>> &ans){
+        void solve(int i, vector<int> &nums, vector<int> &temp, vector<vector<int>> &ans){
             //base case
-            if(idx == nums.size()){
+            if(i == nums.size()){
                 ans.push_back(temp);
                 return;
             }
