@@ -1,0 +1,73 @@
+----------------------------------------------------------------------------------------------------------
+
+                    Recursion tree:
+                           []
+                /                         \
+           [1]                             []
+        /       \                      /        \
+   [1,2]        [1]               [2]           []
+   /    \       /   \           /   \         /    \
+[1,2,3] [1,2] [1,3] [1]     [2,3] [2]     [3]     []
+
+At every level (index):
+Left → take element
+Right → skip element
+
+--------------------
+
+Visualization:
+start []
+ ├── take 1 → [1]
+ │     ├── take 2 → [1,2]
+ │     └── skip 2 → [1]
+ │
+ └── skip 1 → []
+       ├── take 2 → [2]
+       └── skip 2 → []
+
+
+One-line summary:
+“At every index, make a choice (take / not take), and explore all possibilities.”       
+
+---------------------------------------------------------------------------------------------------------
+
+🔹 Core Idea:
+
+👉 Har element ke liye 2 choices hoti hain: Include karo | Skip karo
+👉 Real Logic:
+> Tum array ke har index pe decision lete ho
+> Isse ek binary tree ban jata hai
+
+🔹 Flow:
+> For index i:
+> Take nums[i] → aage badho
+> Don’t take nums[i] → aage badho
+> Jab end pe pahunch jao (i == n) → jo bana hai (temp) usko answer me daal do
+
+-----------------------------------------------------------------------------
+
+❌ temp aur ans same kaam nahi karte
+✔️ Dono alag purpose ke liye hain
+
+🔹 Role:
+
+1. temp → current subset (working state)
+
+> Abhi jo bana rahe ho
+> Har recursion me change hota hai
+> Push / pop hota hai (backtracking)
+👉 Example: [1] → [1,2] → [1] → []
+
+2. ans → final result (storage)
+
+> Sare subsets yahan store hote hain
+> Ek baar push hua → change nahi hota
+👉 Example:
+[]
+[1]
+[1,2]
+[2]
+
+🔥 Core logic
+Jab base case aata hai: ans.push_back(temp);
+Matlab: “jo abhi bana hai (temp) usko save kar lo”
