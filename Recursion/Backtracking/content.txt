@@ -1,1 +1,2 @@
 FOUNDATION |  Subsets | leetcode 78
+Technique to Print only one answer

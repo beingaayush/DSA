@@ -1,0 +1,7 @@
+In backtracking, we have multiple choices, but what if we have to print only one answer? 
+Backtracking naturally explores ALL possibilities.
+If we want ONLY ONE answer, we must STOP recursion immediately after first valid result.
+
+-----------------------------------------------------------------------------------------
+content
+Subsequence sum = k → print ONE only
