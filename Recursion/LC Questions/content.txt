@@ -6,3 +6,4 @@ Permutations | leetcode 46
 Permutations II | leetcode 47
 N - Queens | leetcode 51
 Sudoku solver | leetcode 37
+Palindrome Partitioning | leetcode 131
