@@ -62,6 +62,18 @@ At every node:
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
+General tree Vs Binary tree
+
+| Feature  | General Tree       | Binary Tree  |
+| -------- | ------------------ | ------------ |
+| Children | Unlimited          | Max 2        |
+| Naming   | No fixed names     | Left / Right |
+| Usage    | Rare in interviews | Very common  |
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
 Tree Traversal : Traversal = visiting all nodes
 
 (1) Inorder (LNR)
@@ -101,3 +113,5 @@ void postorder(TreeNode* root) {
     postorder(root->right);
     cout << root->val << " ";
 }
+
+---------------------------------------------------------------------------------------------------------------------------------------
