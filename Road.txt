@@ -2,4 +2,6 @@ Binary Search => Done
 
 NEXT:
 
-Master Recursion -> Tree -> Heap
+Master Recursion -> done
+next:
+Tree -> Heap

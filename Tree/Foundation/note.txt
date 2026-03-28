@@ -1,0 +1,64 @@
+what is Tree ?
+
+A Tree is a data structure where:
+> Data is stored in nodes
+> Nodes are connected like a hierarchy (parent → child)
+> No cycles (you can’t come back to same node)
+
+
+Basic Terminology :
+
+> Root → Top node
+> Parent → Node having children
+> Child → Node below parent
+> Leaf → Node with no children
+> Height → Longest path from root to leaf
+> Depth → Distance from root to a node
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+LinkedList VS Tree
+
+| Feature             | Linked List   | Tree                 |
+| ------------------- | ------------- | -------------------- |
+| Shape               | Straight line | Branching            |
+| Pointer             | 1 next        | 2 (left + right)     |
+| Traversal           | Simple loop   | Recursion            |
+| Path                | Single        | Multiple             |
+| Complexity thinking | Linear        | Divide into subtrees |
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+BINARY TREE (type of Tree) :
+=> A Binary Tree is a tree where:
+Each node has at most 2 children
+> Left child
+> Right child
+
+Node Structure:
+
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+
+    TreeNode(int x) {
+        val = x;
+        left = NULL;
+        right = NULL;
+    }
+};
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Core Idea :
+Tree problems = Recursion on subtrees
+At every node:
+
+1. Solve for left subtree
+2. Solve for right subtree
+3. Combine result
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
