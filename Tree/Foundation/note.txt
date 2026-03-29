@@ -74,7 +74,7 @@ General tree Vs Binary tree
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 
-Tree Traversal : Traversal = visiting all nodes
+Binary Tree Traversal : Traversal = visiting all nodes
 
 (1) Inorder (LNR)
 Left → Node → Right
@@ -113,5 +113,13 @@ void postorder(TreeNode* root) {
     postorder(root->right);
     cout << root->val << " ";
 }
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+TREE types:
+Binary Tree 
+BST (Binary search tree)
+Heap (priority queue)
+Then advanced:- Trie | Segment Tree
 
 ---------------------------------------------------------------------------------------------------------------------------------------

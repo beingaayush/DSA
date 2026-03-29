@@ -4,4 +4,7 @@ NEXT:
 
 Master Recursion -> done
 next:
-Tree -> Heap
+[ Tree -> Heap ]
+
+further:
+Tree → Graph → DP
