@@ -1,10 +1,9 @@
 Binary Search => Done
-
 NEXT:
-
 Master Recursion -> done
+
 next:
-[ Tree -> Heap ]
+[ Tree/Binary TREE -> BST -> Heap ]
 
 further:
-Tree → Graph → DP
+TREE/HEAP → Graph → DP
