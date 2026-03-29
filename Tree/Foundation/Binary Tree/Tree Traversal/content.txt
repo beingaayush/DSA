@@ -10,3 +10,9 @@ Postorder | LRN | Left → Right → Node
 -------------------------------------
 
 one more way - (Iterative way) Level Order Traversal 
+----------------------------------------------------
+
+Memory trick
+Preorder → Root first
+Inorder → Root in middle
+Postorder → Root last
