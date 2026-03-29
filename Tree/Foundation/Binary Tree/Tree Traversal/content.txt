@@ -1,0 +1,12 @@
+Tree Traversal: visting all nodes
+-------------------------------------
+
+Preorder  | NLR | Node → Left → Right
+
+Inorder   | LNR | Left → Node → Right
+
+Postorder | LRN | Left → Right → Node
+
+-------------------------------------
+
+one more way - (Iterative way) Level Order Traversal 
