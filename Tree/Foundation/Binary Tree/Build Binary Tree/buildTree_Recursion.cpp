@@ -1,4 +1,4 @@
-// Build a Binary Tree using preorder | root -> left -> right
+// Build a Binary Tree using Recursion | Preorder | root -> left -> right
 // Time Complexity = O(n)
 #include <bits/stdc++.h>
 using namespace std;

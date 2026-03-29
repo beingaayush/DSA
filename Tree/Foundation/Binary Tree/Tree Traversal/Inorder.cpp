@@ -14,3 +14,6 @@
 
 // In Binary Search Tree (BST):-- Inorder traversal gives sorted output
 
+#include <bits/stdc++.h>
+using namespace std;
+
