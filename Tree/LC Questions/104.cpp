@@ -1,5 +1,11 @@
+// Problem Statement:
 // Given the root of a binary tree, return its maximum depth.
 // A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+// core idea:
+// Har node ke liye:
+// > left subtree ka depth nikalo
+// > right subtree ka depth nikalo
+// > max(left, right) + 1 return karo
 
 #include <bits/stdc++.h>
 using namespace std;
