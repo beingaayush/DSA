@@ -2,3 +2,5 @@ Maximum Depth of a Binary Tree | leetcode 104
 Count Complete Tree nodes | leetcode 222
 Sum of Nodes | Not on LC
 Same Tree | leetcode 100
+Subtree of another tree | leetcode 572
+            //check if current node val same, left subtree same, right subtree same? if yes then identical - return true
