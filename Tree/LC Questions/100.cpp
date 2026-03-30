@@ -26,6 +26,6 @@ class Solution{
             bool isLeftSame = isSameTree(p->left, q->left);        //return true if both tree's left subtree identical
             bool isRightSame = isSameTree(p->right, q->right);    //return true if both tree's right subtree identical
 
-            return isLeftSame && isRightSame && p->val == q->val;  //return true when leftsubtree, rightsubtree and both Tree's root are same
+            return isLeftSame && isRightSame && p->val == q->val;  //return true when leftsubtree same, rightsubtree same and both Tree's root->val are same are same
         }
 };
