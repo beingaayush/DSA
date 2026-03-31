@@ -23,6 +23,8 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+
+//BRUTEFORCE SOLN - O(n^2)
 class Solution{
     public:
         int height(TreeNode* root){
@@ -42,5 +44,25 @@ class Solution{
             int currDiameter = height(root->left) + height(root->right);
 
             return max(currDiameter, max(leftDiameter, rightDiameter)); // Diameter is counted in edges, not nodes So no +1 while updating diameter
+        }
+};
+
+
+//OPTIMAL SOLN - O(n)
+class Solution{
+    public:
+        int ans = 0;
+
+        int height(TreeNode* root){   //this func doing both height and diameter
+            if(root == NULL) return 0;
+
+            int leftHeight = height(root->left);
+            int rightHeight = height(root->right);
+            ans = max(ans, leftHeight + rightHeight);  //currDiam of root Node
+            max(leftHeight, rightHeight) + 1;
+        }
+        int diameterOfBinaryTree(TreeNode* root){
+            height(root);
+            return ans;
         }
 };
