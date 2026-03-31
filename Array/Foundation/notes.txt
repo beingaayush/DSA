@@ -1,0 +1,95 @@
+🔹 1. What is an Array
+Linear data structure storing elements in contiguous memory
+Access via index (0-based)
+
+👉 Key property:
+arr[i] → O(1) access
+
+🔹 2. Types of Arrays
+Static Array → fixed size (C-style)
+Dynamic Array → resizable (vector in C++, ArrayList in Java)
+
+🔹 3. Time Complexity (Must Remember)
+| Operation                       | Complexity     |
+| ------------------------------- | -------------- |
+| Access                          | O(1)           |
+| Update                          | O(1)           |
+| Insert (end)                    | O(1) amortized |
+| Insert (middle)                 | O(n)           |
+| Delete                          | O(n)           |
+| Search (unsorted)               | O(n)           |
+| Search (sorted - binary search) | O(log n)       |
+
+
+🔹 4. Traversal Pattern
+for(int i = 0; i < n; i++){
+    cout << arr[i];
+}
+
+
+🔹 5. Core Patterns (IMPORTANT)
+✅ 1. Two Pointer
+
+Use when:
+> sorted array
+> pair problems
+
+Example: Two Sum (sorted) | Remove duplicates
+👉 Idea: left++, right--
+
+----------------------------------------------
+
+✅ 2. Sliding Window
+
+Use when:
+> subarray / substring
+> continuous segment
+
+Example: max sum subarray of size k | longest substring without repeating chars
+
+👉 Idea: expand + shrink window
+
+--------------------------------------------------------------------------------
+
+✅ 3. Prefix Sum
+
+Use when:
+> range sum queries
+
+👉 Formula: prefix[i] = prefix[i-1] + arr[i]
+
+👉 Range sum: sum(l,r) = prefix[r] - prefix[l-1]
+
+-------------------------------------------------
+
+✅ 4. Kadane’s Algorithm
+
+Use when:
+> max subarray sum
+
+👉 Core idea:
+if sum < 0 → reset
+
+------------------------------------------------
+
+✅ 5. Binary Search (on array)
+
+Use when:
+> sorted OR monotonic answer
+
+👉 Common:
+
+lower bound
+upper bound
+search space reduction
+
+------------------------------------------------
+
+✅ 6. Hashing (Map/Set)
+
+Use when:
+
+> frequency
+> lookup fast
+
+👉 Example:Two Sum | longest consecutive sequence
