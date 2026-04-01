@@ -59,7 +59,7 @@ class Solution{
             int leftHeight = height(root->left);
             int rightHeight = height(root->right);
             ans = max(ans, leftHeight + rightHeight);  //currDiam of root Node
-            max(leftHeight, rightHeight) + 1;
+            return max(leftHeight, rightHeight) + 1;
         }
         int diameterOfBinaryTree(TreeNode* root){
             height(root);
