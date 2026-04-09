@@ -14,6 +14,13 @@
 // 3   4   6
 // Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
+// Core idea:
+// Core samajh:
+// Hum reverse se list bana rahe hain (last node se start)
+// Orde: Right → Left → Root
+// Isliye final output automatically Root → Left → Right (preorder) ban jaata hai
+
+
 #include <bits/stdc++.h>
 using namespace std;
 struct TreeNode{
