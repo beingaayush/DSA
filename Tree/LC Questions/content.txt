@@ -10,3 +10,4 @@ Lowest Common Ancestor | leetcode 236
 Construct Binary tree from Preorder & Inorder Traversal | leetcode 105
 Binary tree Zigzag level order Traversal | leetcode 103
 Binary tree paths | leetcode 257
+Binary tree Inorder Traversal | leetcode 94
