@@ -1,0 +1,53 @@
+Binary Search Tree (BST)
+Definition: Binary tree jisme:
+> Left subtree ke saare nodes < root
+> Right subtree ke saare nodes > root
+> Har subtree bhi same rule follow kare
+
+Core Properties:
+Inorder traversal → sorted output deta hai
+No duplicate values (generally assume)
+Search, insert, delete → O(h) time (h = height)
+
+---------------------------------------------------------------------------------------------
+
+Operations :
+
+1. Search
+
+Root se start
+Target < root → left jao
+Target > root → right jao
+
+2. Insert
+
+Same logic as search
+Jaha null mile → insert
+
+3. Delete (3 cases)
+
+Leaf node → directly delete
+One child → child ko connect kar do parent se
+Two children → inorder successor (right subtree ka smallest) se replace
+
+---------------------------------------------------------------------------------------------
+
+Important Concepts :
+
+> Height
+Balanced → O(log n)
+Skewed → O(n) ❌ (worst case, like linked list)
+
+> Inorder Successor
+Right subtree ka minimum node
+
+> Inorder Predecessor
+Left subtree ka maximum node
+
+---------------------------------------------------------------------------------------------
+
+Traversals :
+
+> Inorder → Left, Root, Right (sorted)
+> Preorder → Root, Left, Right
+> Postorder → Left, Right, Root
