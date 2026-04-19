@@ -23,12 +23,23 @@ Node* insert(Node* root, int val) {
     return root;
 }
 
+// inorder traversal (for checking)
+void inorder(Node* root) {
+    if (root == NULL) return;
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
+}
+
 int main() {
     Node* root = NULL;
 
-    root = insert(root, 5);
-    root = insert(root, 3);
-    root = insert(root, 7);
+    int arr[] = {5, 3, 7, 2, 4, 6, 8};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    return 0;
+    for (int i = 0; i < n; i++) {
+        root = insert(root, arr[i]);
+    }
+
+    inorder(root); // should print sorted order
 }
