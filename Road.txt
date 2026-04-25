@@ -6,11 +6,4 @@ next:
 [ Tree/Binary TREE -> BST -> Heap ]
 
 further:
-TREE/HEAP → Graph → DP 
-
-
-
-
-
-
-buibbu njknj
+TREE/HEAP → Graph → DP
