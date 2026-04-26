@@ -3,3 +3,4 @@ Delete Node in a BST | leetcode 450
 Convert sorted array to BST | leetcode 108
 Validate Binary Search Tree | leetcode 98
 Minimum distance between BST nodes | leetcode 783
+Minimum absolute difference in BST | leetcode 530
