@@ -7,5 +7,3 @@ next:
 
 further:
 TREE/HEAP → Graph → DP
-
-UPDATED
