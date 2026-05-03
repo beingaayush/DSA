@@ -2,8 +2,8 @@
 // Given the root of a Binary Search Tree (BST), return the minimum difference between the values of any two different nodes in the tree.
 
 // Core idea:
-// 👉 In a BST, inorder traversal gives sorted values.
-// 👉 Minimum difference will always be between two adjacent elements in this sorted order.
+// In a BST, inorder traversal gives sorted values.
+// Minimum difference will always be between two adjacent elements in this sorted order.
 // # Logic:
 // > Traverse inorder
 // > Keep track of previous node (prev)
