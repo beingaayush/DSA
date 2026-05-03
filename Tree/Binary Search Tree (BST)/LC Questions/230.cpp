@@ -23,7 +23,25 @@ struct TreeNode{
 
 class Solution{
     public:
+        int prevOrder = 0;
         int kthSmallest(TreeNode* root, int k){
+            if(root == NULL) return -1;
 
+            //if left subtree exists, check in left subtree
+            if(root->left){
+                int leftAns = kthSmallest(root->left, k);
+                if(leftAns != -1) return leftAns;        // answer found in leftSubtree
+            }
+
+            //check current node | is this the k-th node we are visiting?
+            if(prevOrder + 1 == k) return root->val;
+            prevOrder++;  // if not, increase count (we have now visited this node)
+
+            //if right subtree exists, check in right subtree
+            if(root->right){
+                int rightAns = kthSmallest(root->right, k);
+                if(rightAns != -1) return rightAns;       // answer found in rightSubtree
+            }
+            return -1;
         }
 };
