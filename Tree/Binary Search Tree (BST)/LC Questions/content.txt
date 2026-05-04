@@ -7,6 +7,3 @@ Minimum absolute difference in BST | leetcode 530
 Kth Smallest element in BST | leetcode 230
 Lowest common Ancestor of a BST | leetcode 235
 Construct BST from Preorder Traversal | leetcode 1008
-
-getting it by simultaneously,,, by swipiing it down.
-is there any sequences came between this, then aparently this all manufacture cost git divides into 2 categories.
