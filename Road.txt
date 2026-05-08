@@ -8,4 +8,4 @@ next:
 further:
 TREE/HEAP → Graph → DP
 
-time to switch on Heaps, as BST is covered
+time to switch on Heaps, as BST is wrapped
