@@ -31,6 +31,9 @@ void mergeBoth(int arr1[], int n, int arr2[], int m, int res[]){
         idx;
         j++;
     }
+    for(int i = 0; i < m + n; i++){
+    arr1[i] = res[i];
+    }
 }
 
 int main(){
