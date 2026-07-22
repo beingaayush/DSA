@@ -2,6 +2,10 @@
 // Given an array arr, find all unique triplets [i,j,k] such that i + j + k = 0.
 // output - 1st unique triplet = -1 -1 2  | 2nd unique triplet = -1 0 1
 
+//NOte:-
+// a) i < n-2 isliye, kyunki i ke baad 2 aur elements (j aur k) hona zaroori hai, warna triplet ban hi nahi sakta.
+// b) j = i+1 aur k = n-1 isliye, kyunki i first element fix hai, aur baaki 2 elements ko left aur right se Two Pointer technique se efficiently dhoondhte hain.
+
 #include <bits/stdc++.h>
 using namespace std;
 void threeSum(vector<int> &arr){
