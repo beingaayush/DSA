@@ -16,3 +16,4 @@ Majority element
 
 || OTHERS ||
 Find numbers of even number of digits | leetcode 1295
+Check if Array Is Sorted and Rotated | leetcode 1752
