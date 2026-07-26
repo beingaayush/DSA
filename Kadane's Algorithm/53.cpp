@@ -7,15 +7,15 @@ using namespace std;
 class Solution{
 public:
     int maxSubarray(vector<int> & nums){
-        int bestSum = nums[0]; 
+        int currSum = nums[0]; 
         int maxSum  = nums[0]; 
 
         for(int i=1; i<nums.size(); i++){
-            int v1 = bestSum + nums[i]; // extend previous subarray
+            int v1 = currSum + nums[i]; // extend previous subarray
             int v2 = nums[i];           // start new subarray here
             
-            bestSum = max(v1,v2);            // best subarray ending at i
-            maxSum = max(maxSum, bestSum);   // best seen overall
+            currSum = max(v1,v2);            // best subarray ending at i
+            maxSum = max(maxSum, currSum);   // best seen overall
         }
         return maxSum;
     }
