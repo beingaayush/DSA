@@ -24,7 +24,7 @@ public:
                 ans[i] = -1;
             }
             else{
-                st.top();
+                ans[i] = st.top();
             }
             st.push(arr[i]);
         }
