@@ -1,0 +1,133 @@
+===============================
+BINARY SEARCH ON ANSWER (BSOA)
+===============================
+
+Definition:
+Binary Search on Answer means we do NOT search in an array.
+We binary search on the range of possible answers.
+
+--------------------------------------------------
+WHEN TO USE BSOA?
+--------------------------------------------------
+
+Ask these 4 questions:
+
+1. Is the answer a number (speed, days, capacity, distance, etc.)?
+2. Is there a minimum/maximum/smallest/largest value to find?
+3. Can I write a check(mid) function?
+4. Are the answers monotonic?
+   (❌❌❌✅✅✅ or ✅✅✅❌❌❌)
+
+If YES → Use Binary Search on Answer.
+
+--------------------------------------------------
+MONOTONIC PROPERTY
+--------------------------------------------------
+
+Binary Search works ONLY if answers are monotonic.
+
+Example:
+
+Speed:
+1 ❌
+2 ❌
+3 ❌
+4 ✅
+5 ✅
+6 ✅
+
+or
+
+Distance:
+10 ✅
+9  ✅
+8  ✅
+7  ❌
+6  ❌
+
+NOT VALID:
+
+✅ ❌ ✅ ❌
+
+--------------------------------------------------
+STEPS
+--------------------------------------------------
+
+1. Find the minimum possible answer.
+2. Find the maximum possible answer.
+3. Binary search on this range.
+4. Write check(mid):
+      "Can answer = mid work?"
+
+If YES:
+    Save answer
+    Search for a better answer
+
+If NO:
+    Move to the other half
+
+--------------------------------------------------
+TEMPLATE
+--------------------------------------------------
+
+low = minimum_possible_answer
+high = maximum_possible_answer
+
+while(low <= high)
+{
+    mid = low + (high-low)/2;
+
+    if(check(mid))
+    {
+        ans = mid;
+        high = mid - 1;   // For Minimum Answer
+    }
+    else
+    {
+        low = mid + 1;
+    }
+}
+
+--------------------------------------------------
+FOR MAXIMUM ANSWER
+--------------------------------------------------
+
+if(check(mid))
+{
+    ans = mid;
+    low = mid + 1;
+}
+else
+{
+    high = mid - 1;
+}
+
+--------------------------------------------------
+COMMON RANGE
+--------------------------------------------------
+
+Speed      → 1 to max(array)
+Capacity   → max(array) to sum(array)
+Days        → 1 to large value
+Distance    → 1 to max position
+Divisor     → 1 to max(array)
+
+--------------------------------------------------
+COMMON QUESTIONS
+--------------------------------------------------
+
+✔ Koko Eating Bananas (875)
+✔ Ship Packages Within D Days (1011)
+✔ Smallest Divisor (1283)
+✔ Minimum Days to Make Bouquets (1482)
+✔ Split Array Largest Sum (410)
+✔ Aggressive Cows
+✔ Magnetic Force Between Two Balls (1552)
+
+--------------------------------------------------
+ONE-LINE MEMORY TRICK
+--------------------------------------------------
+
+If the answer is numeric, lies in a range, can be verified using check(mid),
+and the results are monotonic (❌→✅ or ✅→❌),
+then apply Binary Search on Answer.
