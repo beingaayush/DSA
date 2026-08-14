@@ -6,3 +6,4 @@ Longest repeating character replacement | leetcode 424
 Max consecutive ones 1's | leetcode 1004
 Maximum Points you can obtain from cards | leetcode 1423 
 Minimum Window Substring | leetcode 76
+Maximum Length Substring With Two Occurrences | leetcode 3090
