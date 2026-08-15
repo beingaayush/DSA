@@ -30,7 +30,7 @@ public:
 
 //building tree
 static int idx = -1;
-Node* buildTree(vector<int> preorder){
+Node* buildTree(vector<int> &preorder){
     idx++;
     if(preorder[idx] == -1) return NULL;
     
