@@ -47,7 +47,7 @@ public:
                 // 2 children
                 TreeNode* IS = getInorderSuccessor(root->right);
                 root->val = IS->val;
-                root->right = deleteNode(root->right, key);
+                root->right = deleteNode(root->right, IS->val);
             }
         }
         return root;
