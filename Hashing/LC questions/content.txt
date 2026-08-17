@@ -3,3 +3,4 @@ Ransom NOte | leetcode 383
 Maximum Number of ballons | leetcode 
 Longest Palindrome | leetcode 409
 Contains Duplicate | leetcode 217
+Valid Anagram | leetcode 242
