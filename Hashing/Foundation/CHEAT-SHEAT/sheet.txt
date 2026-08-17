@@ -1,0 +1,325 @@
+C++ DSA: map, unordered_map, set, unordered_set — Kab Kya Use Karna Hai ?
+
+| Container       | Store kya karta hai? | Sorted? | Main use                |
+| --------------- | -------------------- | ------- | ----------------------- |
+| `unordered_map` | `key → value`        | ❌ No    | Fast lookup / frequency |
+| `map`           | `key → value`        | ✅ Yes   | Sorted key + value      |
+| `unordered_set` | Unique values        | ❌ No    | Fast existence check    |
+| `set`           | Unique values        | ✅ Yes   | Unique + sorted         |
+
+
+Simple Rule
+Key → Value chahiye?
+    |
+    ├── Sorted key chahiye     → map
+    └── Sorted nahi chahiye    → unordered_map
+
+
+Sirf values chahiye?
+    |
+    ├── Sorted + unique        → set
+    └── Fast lookup + unique   → unordered_set
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. unordered_map | Kab use karna hai?
+Jab frequency/count ya key → value mapping chahiye aur order matter nahi karta.
+
+Syntax:
+unordered_map<int, int> mp;
+Example: Frequency Count
+vector<int> nums = {1, 2, 2, 3, 3, 3};
+unordered_map<int, int> freq;
+for(int x : nums) {
+    freq[x]++;
+}
+
+Result:
+
+1 → 1
+2 → 2
+3 → 3
+Common DSA questions
+Frequency Count
+Two Sum
+Sliding Window frequency
+Count occurrences
+Already seen?
+Character frequency
+Complexity
+insert  → O(1) average
+search  → O(1) average
+erase   → O(1) average
+Yaad rakho
+
+Frequency / fast lookup → unordered_map
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. map | Kab use karna hai?
+Jab key → value chahiye aur keys sorted order mein chahiye.
+
+Syntax:
+map<int, int> mp;
+Example
+map<int, int> mp;
+
+
+mp[5] = 10;
+mp[2] = 20;
+mp[8] = 30;
+
+Map automatically keys ko sort karega:
+
+2 → 20
+5 → 10
+8 → 30
+Example: Frequency in sorted order
+map<int, int> freq;
+
+
+for(int x : nums) {
+    freq[x]++;
+}
+
+Traversal karoge to keys increasing order mein milengi.
+
+Kab use karna hai?
+Sorted keys chahiye
+Increasing order mein process karna hai
+lower_bound() / upper_bound() chahiye
+Complexity
+insert  → O(log n)
+search  → O(log n)
+erase   → O(log n)
+Yaad rakho
+
+Key → Value + sorted → map
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. unordered_set | Kab use karna hai?
+Jab sirf unique values rakhni hain aur bas ye check karna hai: "Ye element exist karta hai ya nahi?"
+
+Syntax:
+unordered_set<int> st;
+Example
+vector<int> nums = {1, 2, 2, 3, 3, 4};
+unordered_set<int> st(nums.begin(), nums.end());
+Result conceptually: {1, 2, 3, 4}
+
+Duplicates automatically remove ho jaate hain.
+
+Existence check
+if(st.count(5)) {
+    cout << "Found";
+}
+Common DSA questions
+Contains Duplicate
+Already seen?
+Longest Consecutive Sequence
+Fast existence check
+Complexity
+insert  → O(1) average
+search  → O(1) average
+erase   → O(1) average
+Yaad rakho
+
+Unique + fast lookup → unordered_set
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. set | Kab use karna hai?
+Jab unique values + sorted order dono chahiye.
+
+Syntax:
+set<int> st;
+Example
+set<int> st;
+
+
+st.insert(5);
+st.insert(2);
+st.insert(8);
+st.insert(2);
+
+Result: {2, 5, 8} | Duplicate 2 remove ho gaya aur values sorted hain.
+
+Common use
+Unique + sorted elements
+Minimum / maximum
+lower_bound()
+upper_bound()
+Complexity
+insert  → O(log n)
+search  → O(log n)
+erase   → O(log n)
+Yaad rakho
+
+Unique + sorted → set
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. set vs unordered_set
+Need unique values?
+        |
+        ├── Order doesn't matter → unordered_set
+        |
+        └── Sorted order needed  → set
+
+Example:
+unordered_set<int> st;
+Use when: "Is 10 present?"
+
+Example:
+set<int> st;
+Use when: "Unique elements sorted order mein chahiye."
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+7. map vs unordered_map
+Need key → value?
+        |
+        ├── Order doesn't matter → unordered_map
+        |
+        └── Keys sorted needed   → map
+
+Example:
+unordered_map<int,int> freq;
+For:
+
+Frequency count
+Two Sum
+Sliding Window
+
+Example:
+map<int,int> freq;
+For:
+
+Frequency + sorted keys
+Ordered processing
+lower_bound / upper_bound
+8. Most Common DSA Examples
+Frequency
+unordered_map<int, int> freq;
+
+
+for(int x : nums)
+    freq[x]++;
+Two Sum
+unordered_map<int, int> mp;
+
+Because we need:
+number → index
+and fast lookup.
+
+Duplicate check
+unordered_set<int> st;
+
+
+for(int x : nums) {
+    if(st.count(x))
+        return true;
+
+
+    st.insert(x);
+}
+Unique sorted elements
+set<int> st(nums.begin(), nums.end());
+Longest Consecutive Sequence
+unordered_set<int> st(nums.begin(), nums.end());
+
+Because we mainly need fast existence checking.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+========================================
+        FINAL CHEAT SHEET
+========================================
+
+
+unordered_map
+→ key → value
+→ Fast lookup
+→ Frequency/count
+→ Order doesn't matter
+→ O(1) average
+
+Example:
+unordered_map<int,int> freq;
+freq[x]++;
+
+
+
+
+map
+→ key → value
+→ Keys sorted
+→ Ordered processing
+→ lower_bound / upper_bound
+→ O(log n)
+
+Example:
+map<int,int> mp;
+
+
+
+
+unordered_set
+→ Only unique values
+→ Fast existence check
+→ Order doesn't matter
+→ O(1) average
+
+Example:
+unordered_set<int> st;
+st.insert(x);
+st.count(x);
+
+
+
+
+set
+→ Only unique values
+→ Sorted order
+→ lower_bound / upper_bound
+→ O(log n)
+
+Example:
+set<int> st;
+st.insert(x);
+
+
+
+
+multiset
+→ Values sorted
+→ Duplicates allowed
+
+Example:
+multiset<int> ms;
+
+
+
+
+========================================
+             ONE-LINE RULE
+========================================
+
+
+> Frequency / fast key-value lookup → unordered_map
+
+> Key-value + sorted keys → map
+
+> Unique + fast lookup → unordered_set
+
+> Unique + sorted → set
+
+
+Sorted + duplicates allowed
+→ multiset
+========================================
+
+DSA mein default choice: agar question mein sorting/order ki requirement nahi hai,
+pehle unordered_map ya unordered_set ke baare mein socho.
+Agar sorted order / lower_bound / upper_bound ki requirement hai, map ya set par jao.
