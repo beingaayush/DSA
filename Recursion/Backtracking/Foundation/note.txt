@@ -28,6 +28,40 @@ void solve(parameters){
     }
 }
 
+======================================================================================================================
+
+□ Kya mujhe ALL possible answers chahiye?
+        ↓
+      Backtracking
+
+□ Order matter karta hai?
+        ↓
+      Permutation → used[]
+
+□ Order matter nahi karta?
+        ↓
+      Combination/Subsets → start
+
+□ Target diya hai?
+        ↓
+      target variable
+
+□ Grid hai?
+        ↓
+      mark → recurse → restore
+
+□ Duplicates hain?
+        ↓
+      sort + skip same level
+
+□ Choice ke baad?
+        ↓
+      CHOOSE → EXPLORE → UNDO
+
+
+
+======================================================================================================================
+
 4. Key Characteristics:
 > Uses recursion
 > Explores all possible combinations (tree structure)
