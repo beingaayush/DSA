@@ -1,0 +1,236 @@
+Heap: Concept + Pattern Recognition + When/Where to Use
+
+Heap ko ek special tree-based data structure samjho jiska main purpose hai: Repeatedly minimum ya maximum element ko efficiently nikalna.
+Bas. Heap ka core idea itna hi hai. Baaki saare interview questions isi idea ke variations hain.
+==========================================================================================================================================
+
+1. Heap kya hai?
+Heap ek Complete Binary Tree hota hai jo ek special property follow karta hai.
+
+Min Heap : 
+Parent ≤ Children
+
+        1
+       / \
+      3   5
+     / \
+    7   9
+
+Root par smallest element hota hai.
+-----------------------------------------------------------------------------------
+Max Heap :
+Parent ≥ Children
+
+        9
+       / \
+      7   5
+     / \
+    3   1
+
+Root par largest element hota hai.
+-----------------------------------------------------------------------------------
+
+Important:
+Heap BST nahi hai.
+BST: left < root < right
+
+Heap:
+parent ≤ children       // Min Heap
+parent ≥ children       // Max Heap
+
+Heap mein left subtree aur right subtree ke beech koi ordering guarantee nahi hoti.
+==========================================================================================================================================
+
+2. Heap ka actual purpose
+> Heap ka sabse important operation:
+> Get minimum/maximum quickly.
+
+| Operation      |   Complexity |
+| -------------- | -----------: |
+| Get Min/Max    |     **O(1)** |
+| Insert         | **O(log n)** |
+| Delete Min/Max | **O(log n)** |
+| Build Heap     |     **O(n)** |
+Yahi reason hai ki Heap ko Priority Queue problems mein bahut use kiya jata hai.
+==========================================================================================================================================
+
+3. C++ mein Heap
+> C++ mein normally priority_queue use karoge.
+> Ye syntax yaad hona chahiye.
+
+Max Heap : priority_queue<int> pq;
+10
+7
+5
+3
+
+Top: pq.top();   // 10\
+
+------------------------------------
+
+Min Heap : priority_queue<int, vector<int>, greater<int>> pq;
+3
+5
+7
+10
+
+Top: pq.top();   // 3
+==========================================================================================================================================
+
+4. Heap ka Mental Model : Heap ko "best candidate always at the top" data structure samjho.
+
+For Min Heap:
+
+        smallest
+           ↓
+          TOP
+        /     \
+      ...     ...
+
+------------------------------------
+
+For Max Heap:
+
+        largest
+           ↓
+          TOP
+        /     \
+      ...     ...
+
+Jab bhi tumhe repeatedly:
+
+smallest chahiye
+largest chahiye
+next smallest chahiye
+next largest chahiye
+
+toh Heap ke baare mein socho.
+==========================================================================================================================================
+
+5. Pattern Recognition ⭐
+> Ye sabse important section hai.
+> Question padhte waqt agar ye words/concepts dikhein:
+
+Pattern 1: "Kth largest"
+Example: Find the 3rd largest element.
+
+Immediately:
+Kth Largest → Heap
+Usually Min Heap of size K.
+
+Array
+ ↓
+Maintain K largest
+ ↓
+Min Heap
+ ↓
+heap.top() = Kth largest
+
+Example: [3,2,1,5,6,4] | k = 2
+Answer: 5
+==========================================================================================================================================
+
+6. Kth Smallest
+> Same idea उल्टा.
+> Kth Smallest → Max Heap of size K
+
+Why? : We maintain the K smallest elements.
+Max Heap ka top hoga : Kth smallest
+
+So:
+Kth Largest   → Min Heap
+Kth Smallest  → Max Heap
+
+🔥 Ye pattern memorize karo.
+==========================================================================================================================================
+
+7. Pattern: Top K
+
+Question:
+
+Find the top K largest elements.
+or
+Find K most frequent elements.
+or
+Find K closest points.
+
+Think:
+Top K → Heap
+Usually heap ka size K rakho.
+
+Example: Find 3 largest numbers
+> Instead of sorting entire array:
+> Sort → O(n log n)
+> Maintain: Min Heap size 3
+
+Complexity: O(n log k)
+This is one of the most important Heap patterns
+
+==========================================================================================================================================
+
+8. The Most Important Heap Patterns : 
+
+1. Kth Largest / Smallest
+        ↓
+      Heap size K
+
+2. Top K
+        ↓
+      Heap size K
+
+3. Frequency + Top K
+        ↓
+   HashMap + Heap
+
+4. K Closest / Farthest
+        ↓
+   Heap size K
+
+5. Merge K Sorted
+        ↓
+      Min Heap
+
+6. Median / Two Halves
+        ↓
+    Two Heaps
+==========================================================================================================================================
+
+9. Quick Recognition Cheat Sheet
+> Question mein ye dikhe:
+
+| Question wording       | Think                    |
+| ---------------------- | ------------------------ |
+| Kth largest            | **Min Heap**             |
+| Kth smallest           | **Max Heap**             |
+| Top K largest          | **Min Heap size K**      |
+| Top K smallest         | **Max Heap size K**      |
+| K most frequent        | **Frequency Map + Heap** |
+| K closest              | **Heap size K**          |
+| K sorted lists         | **Min Heap**             |
+| Repeated minimum       | **Min Heap**             |
+| Repeated maximum       | **Max Heap**             |
+| Highest priority       | **Priority Queue**       |
+| Median from stream     | **Two Heaps**            |
+| Scheduling by priority | **Heap**                 |
+==========================================================================================================================================
+
+10. Heap ka Core Decision Tree : Question solve karte waqt:
+             Need to repeatedly
+             find best element?
+                    │
+                   YES
+                    ↓
+             Min or Max?
+              /          \
+           Minimum      Maximum
+              ↓            ↓
+          Min Heap      Max Heap
+
+> Agar question mein K aa gaya:
+Kth / Top K / K closest
+        ↓
+    Heap size K
+
+> Agar question mein two halves / median hai:  Two Heaps
+> Agar question mein multiple sorted structures aur repeatedly smallest element chahiye: Min Heap
+==========================================================================================================================================
