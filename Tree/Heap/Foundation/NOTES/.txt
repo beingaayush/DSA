@@ -4,6 +4,39 @@ Heap ko ek special tree-based data structure samjho jiska main purpose hai: Repe
 Bas. Heap ka core idea itna hi hai. Baaki saare interview questions isi idea ke variations hain.
 ==========================================================================================================================================
 
+if these KEYWORDS in qns are avail: ➡️ sabse pehle Heap / Priority Queue pattern socho.
+
+> Top K
+> Kth Largest
+> Kth Smallest
+> K most frequent
+> K closest
+> K largest/smallest elements
+
+Quick mapping
+| Keyword                       | Usually Pattern        |
+| ----------------------------- | ---------------------- |
+| Kth largest                   | **Min Heap of size K** |
+| Kth smallest                  | **Max Heap of size K** |
+| Top K largest                 | **Min Heap of size K** |
+| Top K smallest                | **Max Heap of size K** |
+| K most frequent               | **HashMap + Heap**     |
+| K closest points/elements     | **Heap**               |
+| Continuously find kth largest | **Min Heap (size K)**  |
+
+Golden Rule 🧠
+“Kth largest chahiye” → chhote elements hatao → Min Heap
+“Kth smallest chahiye” → bade elements hatao → Max Heap
+
+Example: Kth Largest: [3, 2, 1, 5, 6, 4], k = 2
+Min Heap of size 2 maintain karo
+Final heap → [5, 6]
+Top/root → 5 = 2nd largest
+
+Bas ek important exception: agar array sorted hai, ya question me binary search on answer / QuickSelect naturally fit ho raha hai,
+to Heap mandatory nahi hai.
+==========================================================================================================================================
+
 1. Heap kya hai?
 Heap ek Complete Binary Tree hota hai jo ek special property follow karta hai.
 
