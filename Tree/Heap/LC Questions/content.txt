@@ -3,7 +3,7 @@ Kth Smallest Number | no leetcode
 kth largest element in an array | leetcode 215
 Top K Frequent Elements | leetcode 347
 kth largest element in a stream | leetcode 703 
-
+sort Characters by frequency | leetcode 451
 
 
 
@@ -15,8 +15,8 @@ kth largest element in a stream | leetcode 703
 --------------------------------------------------------------------------------------------------------------------
 Heap / Priority Queue: Updated Problem Order
 1. Basic Heap + Top K
-Top K Numbers (Grokking, no LeetCode number)
-Kth Smallest Number (Grokking, no LeetCode number)
+Top K Numbers (Grokking, no LeetCode number) - DONE
+Kth Smallest Number (Grokking, no LeetCode number) - DONE
 Kth Largest Element in a Stream [LeetCode 703]  - DONE
 
 2. Top K Variations
@@ -25,7 +25,7 @@ K Closest Numbers (Grokking, no direct equivalent)
 Top K Frequent Elements [LeetCode 347]  - DONE
 
 3. Frequency + Heap
-Sort Characters By Frequency [LeetCode 451]
+Sort Characters By Frequency [LeetCode 451] - DONE
 Maximum Distinct Elements After Removing K Elements (Grokking, no direct equivalent)
 Sum of Elements (Grokking, no direct equivalent)
 
