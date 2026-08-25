@@ -14,6 +14,7 @@ IPO | leetcode 502
 
 
 --------------------------------------------------------------------------------------------------------------------
+these qns are enough for heap : 
 Heap / Priority Queue: Updated Problem Order
 1. Basic Heap + Top K
 Top K Numbers (Grokking, no LeetCode number) - DONE
