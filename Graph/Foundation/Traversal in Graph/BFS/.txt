@@ -1,0 +1,18 @@
+BFS ka desi matlab hai: Level-by-Level checking.
+Iska sabse badhiya real-life example hai Water Ripple Effect (paani me patthar phekna).
+Jab tum paani me patthar phek te ho, toh waves gol-gol circle me pehle sabse paas wale area me felti hain,
+fir usse door, fir usse door. BFS bhi bilkul aise hi kaam karta hai!
+
+🗺️ BFS Ka Simple Logic (The 3-Step Rule)
+BFS chalane ke liye hume do cheezein chahiye hoti hain:
+
+> Queue (Line): Jo pehle aayega, uski baari pehle aayegi (FIFO - First In First Out).
+> Visited Array (Bookkeeping): Ek diary, jisme hum likhte hain ki kis node par hum pehle ja chuke hain,
+  taaki hum ek hi jagah baar-baar ghoom kar infinite loop me na fass jayein.
+
+🔄 BFS Algorithm Steps:
+step1 = Start karo: Kisi bhi starting node (mando 0) ko Queue me daalo aur usko Visited mark kar do.
+step2 = Loop chalao (jab tak Queue khali na ho):
+        Queue ke sabse aage wale node ko bahar nikalo (aur print kar do).
+        Uske saare unvisited padosiyo (neighbors) ko Queue me daalo aur unhe visited mark kar do.
+step3 = Repeat step 2.
