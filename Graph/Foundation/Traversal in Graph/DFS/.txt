@@ -1,0 +1,205 @@
+DFS ka desi matlab hai: "Ghus jaao gehraai tak (Go as deep as possible)!"
+Agar BFS paani ka chhanna (level-by-level ripple) tha, toh DFS ek Bhool-Bhulaiya (Maze) jaisa hai:
+Tum ek raste par tab tak aage badhte jaate ho jab tak aage Dead End na aa jaye.
+Jaise hi dead end aata hai, tum ek step peeche mudte ho (Backtrack) aur doosra rasta dhoondhte ho.
+-----------------------------------------------------------------------------------------------------
+
+DFS (Depth First Search) Notes
+1. What is DFS?
+DFS = Depth First Search
+DFS is a graph traversal technique where we:
+Start from a node → go as deep as possible → then backtrack.
+
+Example:
+        1
+       / \
+      2   3
+     / \
+    4   5
+
+Starting from 1, one possible DFS traversal:
+1 → 2 → 4 → 5 → 3
+It goes deep through one path before returning.
+==================================================================
+2. Core Idea:
+Visit current node
+↓
+Mark it visited
+↓
+Visit an unvisited neighbour
+↓
+Go deeper
+↓
+When no unvisited neighbour remains, backtrack
+
+The most important idea: DFS uses recursion or a stack.
+For DSA, recursive DFS is usually easiest to understand and write.
+==================================================================
+
+3. Why do we need visited?
+Consider:
+1 ─── 2
+|     |
+└─────3
+
+If we don't track visited nodes: 1 → 2 → 3 → 1 → 2 → 3 → ...
+Infinite loop. Computer officially becomes stupid because we forgot one array.
+
+So we use:
+vector<int> visited(n, 0);
+
+Meaning:
+0 = not visited
+1 = visited
+=============================================================== 
+
+4. DFS Code :-
+Suppose we have an adjacency list:
+
+vector<vector<int>> adj;
+Recursive DFS
+void dfs(int node, vector<vector<int>>& adj, vector<int>& visited) {
+
+    visited[node] = 1;
+
+    for (int neighbour : adj[node]) {
+
+        if (!visited[neighbour]) {
+            dfs(neighbour, adj, visited);
+        }
+    }
+}
+
+=============================================================== 
+
+5. Understand the Code :
+Step 1: Mark current node visited
+visited[node] = 1;
+
+We are currently on this node, so mark it visited.
+
+Step 2: Check all neighbours
+for (int neighbour : adj[node])
+For every neighbour of the current node:
+node
+ ├── neighbour 1
+ ├── neighbour 2
+ └── neighbour 3
+
+Step 3: Visit only unvisited neighbours
+if (!visited[neighbour])
+If already visited, ignore it.
+If not visited: dfs(neighbour, adj, visited);
+Go deeper.
+=============================================================== 
+
+6. DFS Traversal Example
+Graph:
+0 ─── 1
+│     │
+2 ─── 3
+
+Adjacency list:
+0 → [1, 2]
+1 → [0, 3]
+2 → [0, 3]
+3 → [1, 2]
+
+Start: dfs(0, adj, visited);
+
+Flow: dfs(0)
+│
+├── visit 0
+│
+├── dfs(1)
+│   │
+│   ├── 0 already visited
+│   │
+│   └── dfs(3)
+│       │
+│       ├── 1 already visited
+│       │
+│       └── dfs(2)
+│
+└── backtrack
+
+Traversal: 0 → 1 → 3 → 2
+=============================================================== 
+
+7. DFS with Traversal Result
+
+If the question asks you to store the traversal:
+
+void dfs(int node, vector<vector<int>>& adj,
+         vector<int>& visited, vector<int>& ans) {
+
+    visited[node] = 1;
+    ans.push_back(node);
+
+    for (int neighbour : adj[node]) {
+
+        if (!visited[neighbour]) {
+            dfs(neighbour, adj, visited, ans);
+        }
+    }
+}
+
+Usage:
+vector<int> visited(n, 0);
+vector<int> ans;
+dfs(0, adj, visited, ans);
+=============================================================== 
+
+8. DFS for a Disconnected Graph
+Consider:
+Component 1:      Component 2:
+0 ─── 1           2 ─── 3
+
+If we only do:
+dfs(0, adj, visited);
+We visit:
+0, 1
+But 2 and 3 remain unvisited.
+
+So:
+for (int i = 0; i < n; i++) {
+    if (!visited[i]) {
+        dfs(i, adj, visited);
+    }
+}
+
+This ensures: Every node in the graph gets visited.
+=============================================================== 
+
+9. Final DFS Template for Notes
+void dfs(int node, vector<vector<int>>& adj,
+         vector<int>& visited) {
+
+    visited[node] = 1;
+
+    for (int neighbour : adj[node]) {
+
+        if (!visited[neighbour]) {
+            dfs(neighbour, adj, visited);
+        }
+    }
+}
+
+For a complete graph traversal:
+
+vector<int> visited(n, 0);
+
+for (int i = 0; i < n; i++) {
+
+    if (!visited[i]) {
+        dfs(i, adj, visited);
+    }
+}
+One-line memory trick:
+DFS = Visit node → mark visited → recursively visit every unvisited neighbour.
+=============================================================== 
+
+Time Complexity
+O(V + E)
+V = Vertices / Nodes
+E = Edges
