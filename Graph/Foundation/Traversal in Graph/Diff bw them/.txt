@@ -1,0 +1,56 @@
+DFS Code vs BFS Code
+--------------------
+
+Assume graph is stored as:
+vector<vector<int>> adj;
+
+DFS uses recursion / stack :-
+
+void dfs(int node, vector<vector<int>>& adj, vector<int>& visited) {
+    visited[node] = 1;
+
+    for (int neighbour : adj[node]) {
+        if (!visited[neighbour]) {
+            dfs(neighbour, adj, visited);
+        }
+    }
+}
+
+BFS uses queue :-
+
+void bfs(int start, vector<vector<int>>& adj, vector<int>& visited) {
+    queue<int> q;
+
+    visited[start] = 1;
+    q.push(start);
+
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+
+        for (int neighbour : adj[node]) {
+            if (!visited[neighbour]) {
+                visited[neighbour] = 1;
+                q.push(neighbour);
+            }
+        }
+    }
+}
+
+
+# Main Difference:-
+| DFS                            | BFS                              |
+| ------------------------------ | -------------------------------- |
+| Uses **recursion / stack**     | Uses **queue**                   |
+| Goes **deep first**            | Goes **level by level**          |
+| Recursive call                 | `push()` into queue              |
+| Backtracks after reaching deep | Processes all nearby nodes first |
+
+
+The pattern to remember :
+DFS: Visit → DFS(neighbour)
+BFS: Visit → Queue(neighbour)
+
+Same graph, same visited, same neighbour loop.
+Humans apparently needed two entire traversal algorithms just because
+one uses a stack-like approach and the other uses a queue.
