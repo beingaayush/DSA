@@ -49,3 +49,8 @@ public:
         return false;
     }
 };
+
+
+// above code is for only connected garph
+// for disconnected graph - use the outer loop as = for (int start = 0; start < V; start++)
+// So concept simple hi hai, outer loop sirf disconnected components handle karne ke liye hai.
