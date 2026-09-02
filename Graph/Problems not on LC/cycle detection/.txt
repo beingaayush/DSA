@@ -1,0 +1,122 @@
+Detect a Cycle in an Undirected Graph using BFS
+Detect a Cycle in an Undirected Graph using DFS
+
+
+how will we get to know - there's cycle exists in Graph !
+Graph
+
+0 ---- 1
+|      |
+|      |
+3 ---- 2
+
+Isme cycle hai:
+
+0 → 1 → 2 → 3 → 0
+
+BFS maan le `0` se start hua.
+
+Step-by-step
+
+Initially:
+
+Queue: 0
+Parent of 0 = -1
+
+`0` ke neighbours: `1, 3`
+
+Dono unvisited hain:
+
+1 → parent = 0
+3 → parent = 0
+
+Ab:
+
+Queue: 1, 3
+
+
+Ab `1` process karo
+
+`1` ke neighbours:
+
+0, 2
+
+`0` already visited hai.
+
+Lekin:
+
+parent of 1 = 0
+
+So **0 ko ignore karo**.
+
+Kyunki ye wahi edge hai jisse hum `1` tak aaye the:
+
+0 → 1
+
+Phir `2` unvisited hai, so:
+
+2 → parent = 1
+
+
+Ab `2` process karo
+
+`2` ke neighbours:
+
+1, 3
+
+`1` visited hai, aur:
+
+parent of 2 = 1
+
+So `1` ko ignore.
+
+**Lekin** **`3`** **already visited hai aur** **`3 != parent`**
+
+neighbor = 3
+parent = 1
+
+3 != 1  → CYCLE
+
+
+Lekin cycle kaise pata chala?
+
+Graph mein `2` aur `3` ke beech edge hai:
+
+2 ---- 3
+
+Aur BFS ke through hum pehle hi `3` tak pahunch chuke the:
+
+0 → 3
+
+Saath hi `0 → 1 → 2` bhi exist karta hai.
+
+So `2` se `3` ka edge **ek already-existing path ko close kar raha hai**:
+
+0
+├── 1
+│   └── 2
+│       └── 3
+└──────────┘
+
+Isliye cycle.
+
+
+Golden Rule
+
+Undirected graph mein:
+
+**Agar current node ka koi neighbour already visited hai AND woh current node ka parent nahi hai → cycle hai.**
+
+if (!vis[neighbor]) {
+    vis[neighbor] = 1;
+    q.push({neighbor, node});
+}
+else if (neighbor != parent) {
+    return true;   // CYCLE
+}
+
+**Parent ko ignore karna compulsory hai**, warna simple:
+
+0 ---- 1
+
+mein bhi cycle detect ho jayegi, kyunki `1` ko process karte waqt `0` already visited milega.
