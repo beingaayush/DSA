@@ -32,6 +32,6 @@ class Solution{
                 ans.push_back(st.top());
                 st.pop();
             }
-            return;
+            return ans;
         }
 };
