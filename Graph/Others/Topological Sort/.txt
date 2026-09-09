@@ -1,0 +1,149 @@
+1. Sabse pehle: Topological Sort kya hai?
+Topological Sort = Directed Graph ke nodes ko aise order mein arrange karna ki har dependency pehle aaye.
+
+Example:
+A → B
+A → C
+B → D
+C → D
+
+Meaning:
+A must happen before B
+A must happen before C
+B and C must happen before D
+
+Valid Topological Order: A → B → C → D
+Also valid: A → C → B → D
+
+But this is invalid: B → A → C → D
+Because A → B means A must come before B.
+-----------------------------------------------------------------------------------------------------------
+
+2. Real-life example
+Imagine college subjects: Programming Basics → DSA → Advanced DSA
+You can't logically study Advanced DSA before DSA.
+So:
+Programming Basics
+        ↓
+       DSA
+        ↓
+  Advanced DSA
+
+Topological Sort gives you a valid sequence.
+-----------------------------------------------------------------------------------------------------------
+
+3. VERY IMPORTANT: It works only on DAG
+Topological Sort requires: Directed Acyclic Graph (DAG)
+Meaning:
+
+Directed => Edges have direction: A → B
+
+Acyclic => There must be NO cycle.
+For example:
+A → B → C
+    ↑   ↓
+    └───┘
+This is impossible to topologically sort.
+Why?
+A before B
+B before C
+C before A
+Everyone is waiting for everyone. Classic group project.
+-----------------------------------------------------------------------------------------------------------
+
+4. Two methods
+You need to know two approaches:
+
+Method 1: DFS
+Uses:
+DFS + visited states + stack
+
+Method 2: Kahn's Algorithm
+Uses:
+Indegree + Queue
+
+For interviews, learn both.
+But I'd recommend learning Kahn's Algorithm first, because the logic is much more intuitive.
+-----------------------------------------------------------------------------------------------------------
+
+5. Kahn's Algorithm: Core Idea
+Take:
+
+A → B
+A → C
+B → D
+C → D
+
+First calculate indegree.
+What is indegree? => Number of incoming edges.
+A → B
+A → C
+B → D
+C → D
+
+Node	Indegree
+A	0
+B	1
+C	1
+D	2
+
+Now:
+Nodes with indegree = 0 have no dependency.
+
+So we start with:
+Queue = [A]
+Step 1
+
+Remove A:
+A
+↓
+B
+C
+
+Add A to answer:
+Answer = [A]
+
+Remove A's outgoing edges:
+B indegree: 1 → 0
+C indegree: 1 → 0
+
+Put them in queue:
+Queue = [B, C]
+
+Step 2
+Take B:
+Answer = [A, B]
+
+Remove:
+B → D
+
+So:
+D indegree: 2 → 1
+D isn't ready yet.
+
+Step 3
+Take C:
+Answer = [A, B, C]
+
+Remove:
+C → D
+
+Now:
+D indegree: 1 → 0
+
+Put D in queue.
+Queue = [D]
+Step 4
+
+Take D:
+Answer = [A, B, C, D]
+Done.
+
+Final:
+[A, B, C, D]
+
+# The entire Kahn algorithm in one sentence
+
+Take nodes having indegree 0 → remove them → decrease indegree of their neighbours → 
+-> whenever a neighbour becomes 0, put it in queue.
+That's literally the algorithm.
