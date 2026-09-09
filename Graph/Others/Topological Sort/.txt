@@ -147,3 +147,71 @@ Final:
 Take nodes having indegree 0 → remove them → decrease indegree of their neighbours → 
 -> whenever a neighbour becomes 0, put it in queue.
 That's literally the algorithm.
+------------------------------------------------------------------------------------------------------------
+
+Kahn's Algorithm ko tum basically “special BFS” samajh sakte ho.
+Bas normal BFS mein hum arbitrary starting node se level-wise traverse karte hain.
+Kahn mein queue mein sirf indegree = 0 nodes jaate hain.
+
+Normal BFS intuition
+Node lo
+ ↓
+Queue se nikalo
+ ↓
+Neighbours ko queue mein daalo
+ ↓
+Repeat
+
+Kahn's intuition
+Jiski dependency = 0
+        ↓
+      Queue
+        ↓
+     Process
+        ↓
+Uski outgoing edge hatao
+        ↓
+Neighbour ki dependency kam karo
+        ↓
+Agar dependency = 0
+        ↓
+      Queue
+
+Example:
+A → B
+A → C
+B → D
+C → D
+
+Initially:
+indegree:
+A = 0
+B = 1
+C = 1
+D = 2
+
+So:
+Queue = [A]
+
+Process A:
+B: 1 → 0
+C: 1 → 0
+
+Now:
+Queue = [B, C]
+
+Process B:
+D: 2 → 1
+D isn't ready.
+
+Process C:
+D: 1 → 0
+
+Now D enters queue.
+So the intuition is: “Jiski saari prerequisites complete ho gayi hain, usko queue mein daal do.”
+That's Kahn's Algorithm.
+One thing to lock into your brain
+Kahn = BFS + Indegree
+
+And: Indegree 0 = No pending dependency = Ready to process.
+Bas. Isko normal BFS se unnecessarily complicated mat banana.
