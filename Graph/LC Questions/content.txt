@@ -1,4 +1,3 @@
-Number of Provinces | LeetCode 547
 Number of Islands | LeetCode 200
 Flood Fill | LeetCode 733
 Rotting oranges | LeetCode 994
@@ -6,7 +5,7 @@ Number of Distinct Islands | LeetCode 694
 is Graph Bipartite | LeetCode 785
 Course Schedule | LeetCode 207
 Course Schedule 2 | LeetCode 210
-
+Alien Dictionary | LeetCode 269
 
 
 

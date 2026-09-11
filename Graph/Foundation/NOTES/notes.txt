@@ -496,3 +496,18 @@ To traverse graphs, we use DFS for deep exploration and BFS for level-by-level e
 A visited array prevents revisiting nodes and infinite loops.
 For disconnected graphs, we start DFS/BFS from every unvisited node, which helps identify connected components.
 A grid can also be treated as a graph where each cell is a node connected to its valid neighbors.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Indegree kya hota hai?
+Kisi node ke andar kitni edges aa rahi hain = uska indegree.
+
+Example:
+a → b → c
+
+Toh:
+a = 0
+b = 1
+c = 1
+
+Kyuki b ke andar 1 arrow aa raha hai, aur c ke andar bhi 1.
