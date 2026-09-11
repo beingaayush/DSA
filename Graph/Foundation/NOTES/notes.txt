@@ -1,3 +1,5 @@
+order : notes => build => traversal => cycle detect => Topological sort
+
 Graph Fundamentals Notes :
 Graph start karne se pehle ye fundamentals perfectly clear hone chahiye. Ye base strong hua, toh BFS, DFS, Topological Sort, Dijkstra, DSU, MST sab comparatively natural lagenge.
 
