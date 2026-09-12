@@ -1,1 +1,30 @@
 Assign Cookies | leetcode 455
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+to do:
+| #  | Problem                                             | Main pattern        |
+| -- | --------------------------------------------------- | ------------------- |
+| 1  | **455. Assign Cookies**                             | Basic Greedy        |
+| 2  | **860. Lemonade Change**                            | Greedy + simulation |
+| 3  | **122. Best Time to Buy/Sell Stock II**             | Local profit        |
+| 4  | **55. Jump Game**                                   | Farthest reach      |
+| 5  | **45. Jump Game II**                                | Greedy + range      |
+| 6  | **134. Gas Station**                                | Greedy reset        |
+| 7  | **763. Partition Labels**                           | Last occurrence     |
+| 8  | **435. Non-overlapping Intervals**                  | Interval Greedy     |
+| 9  | **452. Minimum Number of Arrows to Burst Balloons** | Interval Greedy     |
+| 10 | **56. Merge Intervals**                             | Interval handling   |
+| 11 | **406. Queue Reconstruction by Height**             | Sorting + Greedy    |
+| 12 | **621. Task Scheduler**                             | Greedy + counting   |
