@@ -1,0 +1,58 @@
+Greedy Algorithm — Short Notes
+1. What is Greedy?
+Greedy = har step par abhi ka sabse acha choice lena, hoping that these local best choices give the global best answer.
+Local optimum → Global optimum
+
+Example:
+If you want to minimize the number of coins and denominations are suitable, repeatedly choose the largest possible coin.
+********************************************************************************************************************************************
+
+2. Core Pattern
+Most Greedy problems follow:
+
+> Sort / arrange data
+> Pick the best available option
+> Take it if it is valid
+> Continue
+
+Typical code structure:
+sort(...);
+
+for (...) {
+    if (canTake) {
+        take();
+    }
+}
+********************************************************************************************************************************************
+
+3. How to Identify Greedy?
+Ask:
+
+Can I make the best choice right now?
+Once I make this choice, does it hurt future decisions?
+Can the problem be solved by repeatedly choosing the earliest / smallest / largest / highest priority option?
+Is there a natural sorting order?
+
+Common signals:
+| Signal               | Typical Greedy choice          |
+| -------------------- | ------------------------------ |
+| Intervals            | Earliest finishing             |
+| Minimum/maximum      | Smallest/largest useful choice |
+| Scheduling           | Earliest deadline/finish       |
+| Fractional selection | Highest value/weight           |
+| Matching             | Smallest suitable / closest    |
+| Activity selection   | Earliest ending activity       |
+********************************************************************************************************************************************
+
+4. Most Important Greedy Pattern: Intervals
+For maximum number of non-overlapping intervals:
+
+Sort by ending time
+↓
+Take the interval that ends earliest
+↓
+If next.start >= lastEnd → take it
+
+Why?
+Earlier finishing leaves more space for future intervals.
+This is one of the most important Greedy intuitions.
