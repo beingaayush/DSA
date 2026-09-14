@@ -1,6 +1,7 @@
 Assign Cookies | leetcode 455
 Lemonade Change | leetcode 860
 Jump Game 1 | leetcode 55
+Jump Game 2 | leetcode 45
 
 
 
