@@ -211,6 +211,9 @@ But for large sparse graphs, this wastes massive space.
 
 B. Adjacency List ⭐ Most Important
 Same graph:
+0 ----- 1
+|       |
+2 ----- 3
 
 0 → [1, 2]
 1 → [0, 3]
