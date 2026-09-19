@@ -1,5 +1,5 @@
 // Problem Statement:
-// You are given a 2D grid grid consisting of:
+// You are given a 2D grid consisting of:
 // '1' → Land
 // '0' → Water
 // An island is a group of connected land cells ('1') connected horizontally or vertically.
