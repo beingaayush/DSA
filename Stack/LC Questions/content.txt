@@ -4,3 +4,4 @@ Next Greater element ii | leetcode 503
 Daily Temperatures | leetcode 739
 Min Stack | leetcode 155
 Remove all adjacent Duplicates from string ii | leetcode 1209
+Reverse Substrings Between Each Pair of Parentheses | leetcode 1190
