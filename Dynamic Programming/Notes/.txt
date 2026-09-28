@@ -1,0 +1,186 @@
+1. DP actually hai kya?
+Dynamic Programming =
+Same subproblem ko baar-baar solve karne se bachana by storing its answer.
+
+Simple example:
+f(5)
+├── f(4)
+│   ├── f(3)
+│   └── f(2)
+└── f(3)   ← same problem again
+f(3) baar-baar calculate ho raha hai.
+DP bolta hai:
+f(3) ka answer ek baar nikalo
+↓
+store karo
+↓
+next time directly use karo
+-----------------------------------------------------------------------------------------------------------
+
+2. DP question ko kaise recognize kare?
+Sabse important part.
+Question dekhte hi ye 3 checks karo:
+
+Check 1: Choices hain? -> Agar har step par multiple choices mil rahi hain: DP ka possibility strong hai.
+Take / Don't Take
+Left / Right
+Buy / Skip
+Pick / Not Pick
+Use / Don't Use
+**********************************************************************************************************
+
+Check 2: Same subproblem repeat ho raha hai? -> Recursion tree imagine karo.
+Agar: 
+f(i)
+├── f(i+1)
+└── f(i+2)
+aur kahin dobara f(i+1) / f(i+2) aa raha hai → overlapping subproblems.
+DP ka major signal.
+**********************************************************************************************************
+
+Check 3: Previous decisions matter karte hain?
+Example: Maximum money rob karni hai, but adjacent houses rob nahi kar sakte.
+
+At house i, decision depends on what happened before:
+Rob i     → i-2 ka answer
+Skip i    → i-1 ka answer
+
+So: dp[i] = best answer till i
+Ye classic DP pattern hai.
+-----------------------------------------------------------------------------------------------------------
+
+3. DP ke 2 core properties -> Almost har DP question mein ye concept dhoondo:
+
+① Overlapping Subproblems
+Same smaller problem repeatedly solve ho raha hai.
+② Optimal Substructure
+Bade problem ka optimal answer, smaller problems ke optimal answers se ban sakta hai.
+
+Shortcut: Repeated smaller problems + best answer build karna = DP candidate
+-----------------------------------------------------------------------------------------------------------
+
+4. DP vs Greedy
+Ye distinction bahut important hai because hum abhi Greedy → DP ja rahe ho.
+
+Greedy : Har step par: "Abhi jo best choice hai, wahi le lo."
+Aur generally future consequences ko fully explore nahi karta.
+
+DP : "Different choices explore karo, unke results store karo, aur overall best choose karo."
+
+Example:
+Greedy:
+current best → choose
+
+DP:
+choice 1 → result
+choice 2 → result
+choice 3 → result
+             ↓
+          best result
+Important: Har optimization problem DP nahi hota.
+-----------------------------------------------------------------------------------------------------------
+
+6. DP State kya hota hai?
+State = kisi subproblem ko uniquely define karne wali information.
+Ye DP ka sabse important concept hai.
+
+Example: ith house tak maximum money.
+State: dp[i]
+Meaning: ith house tak maximum money.
+
+Another example: ith item consider kar chuke hain aur capacity w hai.
+State: dp[i][w]
+Meaning: First i items using capacity w ka best answer.
+
+So:
+Question
+   ↓
+What information defines the subproblem?
+   ↓
+That becomes DP state
+-----------------------------------------------------------------------------------------------------------
+
+7. DP Transition
+State mil gaya. Ab next question:
+Current state ka answer previous states se kaise banega?
+
+Example House Robber:
+dp[i] = max(
+    dp[i-1],          // don't rob i
+    dp[i-2] + money[i] // rob i
+)
+
+This is called transition.
+Basically: State → Choices → Previous states → Best answer
+-----------------------------------------------------------------------------------------------------------
+
+8. DP solve karne ka fixed framework
+Har DP problem mein ye sequence follow karo:
+1. What is changing?
+        ↓
+2. Define the state
+        ↓
+3. What choices do I have?
+        ↓
+4. Write the transition
+        ↓
+5. Base cases
+        ↓
+6. Memoization / Tabulation
+        ↓
+7. Time + Space complexity
+***************************
+
+Example : House Robber
+State:
+dp[i] = max money till i
+
+Choices:
+1. Don't rob i
+2. Rob i
+
+Transition:
+dp[i] = max(dp[i-1], dp[i-2] + nums[i])
+
+Base:
+dp[0] = nums[0]
+dp[1] = max(nums[0], nums[1])
+That's basically the entire thought process.
+-----------------------------------------------------------------------------------------------------------
+
+9. DP ke major patterns
+
+Pattern         |  Typical State
+-------------------------------------
+ID DP           |     dp[i]
+2D/Grid DP      |     dp[i][j]
+Take / Not Take |     dp[i][...]
+Knapsack        |     dp[i][capacity]
+Subsequences    |     dp[i][j]
+String DP       |     dp[i][j]
+Partition DP    |     dp[i][j]
+Interval DP     |     dp[l][r]
+DP on Trees     |     dp[node][state]
+DP on Stocks    |     dp[i][buy/sell]
+
+-----------------------------------------------------------------------------------------------------------
+
+Mental Model Of DP:
+             DP
+              │
+       ┌──────┴──────┐
+       ↓             ↓
+   Choices       Subproblem
+       │             │
+       └──────┬──────┘
+              ↓
+          State
+              ↓
+        Transition
+              ↓
+         Base Case
+              ↓
+       Memo / Tabulation
+
+DP = choices wale problem ko smaller subproblems mein todna, unke answers store karna,
+aur unse optimal/count answer build karna.
