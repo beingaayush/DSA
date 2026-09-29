@@ -1,0 +1,15 @@
+Har basic DP question mein ye 3 questions pucho:
+
+1. State
+dp[i] mein kya answer store karunga?
+
+Usually:
+dp[i] = smaller problem ka answer
+
+2. Base Case
+Sabse chhota possible input kya hai jiska answer mujhe directly pata hai?
+
+3. Transition / Recurrence
+Current state tak main kin previous states se aa sakta hoon?
+
+Phir un previous states ko combine karo.
