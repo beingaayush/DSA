@@ -36,3 +36,49 @@ dp[1] = 1
 dp[2] = 2
 
 Har stair tak pahunchne ke ways = usse previous stair tak ke ways + usse 2 stairs previous tak ke ways.
+
+***************************************************************************************************
+
+1. Memoization Idea
+Approach: Recursion + dp[]
+- dp[i] = i stairs tak pahunchne ke ways.
+- Recursion se n se start karke peeche jao.
+- Har state ka answer calculate hone ke baad dp[i] mein store karo.
+- Agar same i dobara aaye aur dp[i] already calculated ho, direct return karo.
+Core flow
+f(n)
+ ↓
+f(n-1) + f(n-2)
+ ↓
+answer ko dp[n] mein store
+ ↓
+already calculated? → direct answer
+
+One line:  
+Recursion se answer nikalo, aur calculated answers ko dp mein save karke repeat calculation avoid karo.
+-------------------------------------------
+
+2. Tabulation Idea
+Approach: Loop + dp[], no recursion.
+- dp[i] = i stairs tak pahunchne ke ways.
+- Pehle smallest answers fill karo:
+dp[1] = 1
+dp[2] = 2
+
+- Phir bottom → top jao:
+dp[3] = dp[2] + dp[1]
+dp[4] = dp[3] + dp[2]
+dp[5] = dp[4] + dp[3]
+...
+
+Core flow
+1 → 2 → 3 → 4 → ... → n
+
+One line:  
+Chhote answers pehle table mein fill karo, phir unhi se bade answers calculate karte jao.
+-------------------------------------------------
+
+Same recurrence dono mein:
+dp[i] = dp[i-1] + dp[i-2];
+
+Bas us recurrence ko calculate karne ka method different hai.
