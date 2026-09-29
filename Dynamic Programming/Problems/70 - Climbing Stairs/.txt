@@ -1,0 +1,38 @@
+Problem Statement:
+You are climbing a staircase. It takes n steps to reach the top.
+Each time, you can climb either:
+-> 1 step
+-> 2 steps
+Return the number of distinct ways you can reach the top.
+Example:
+Input:  n = 2
+Output: 2
+
+Ways:
+1 + 1
+2
+
+Input:  n = 3
+Output: 3
+
+Ways:
+1 + 1 + 1
+1 + 2
+2 + 1
+-----------------------------------------------------------------
+core idea:
+Har stair i par pahunchne ke 2 possible last moves ho sakte hain:
+i-1 → +1 → i
+i-2 → +2 → i
+
+Isliye:
+dp[i] = dp[i-1] + dp[i-2];
+
+Where:
+dp[i] = stair i tak pahunchne ke total ways
+
+Base:
+dp[1] = 1
+dp[2] = 2
+
+Har stair tak pahunchne ke ways = usse previous stair tak ke ways + usse 2 stairs previous tak ke ways.
