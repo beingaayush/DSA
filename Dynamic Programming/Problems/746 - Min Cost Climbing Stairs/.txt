@@ -1,0 +1,172 @@
+You are given an integer array cost where:
+- cost[i] = cost of stepping on the i-th stair.
+- After paying the cost, you can climb 1 or 2 stairs.
+- You can start from index 0 or index 1.
+- Your goal is to reach the top of the staircase.
+- The top is one step beyond the last index.
+Return the minimum cost needed to reach the top.
+Example
+cost = [10, 15, 20]
+
+Answer = 15
+
+One optimal way:
+Start at index 1
+Pay 15
+Jump 2 steps → reach the top
+
+Total = 15
+
+Important: Reaching the top does not require paying a cost for the top itself.
+-------------------------------------------------------------------------------
+
+🪜 Question actually kya bol raha hai?
+Maan le:
+cost = [10, 15, 20]
+
+Iska matlab staircase:
+       TOP
+        ↑
+   [20]  ← stair 2
+   [15]  ← stair 1
+   [10]  ← stair 0
+
+Har stair par ek cost hai:
+- Stair 0 → ₹10
+- Stair 1 → ₹15
+- Stair 2 → ₹20
+Tum kya kar sakte ho?
+Har baar:
+- 1 stair aage ja sakte ho
+- 2 stairs aage ja sakte ho
+Aur jis stair par land karoge, uski cost pay karni padegi.
+Example
+cost = [10, 15, 20]
+
+Tum stair 0 ya stair 1 se start kar sakte ho.
+Option 1
+Start → stair 0 → stair 1 → stair 2 → TOP
+
+Cost:
+10 + 15 + 20 = 45
+
+Option 2
+Start → stair 0 → stair 2 → TOP
+
+Cost:
+10 + 20 = 30
+
+Option 3
+Start → stair 1 → TOP
+
+Cost:
+15
+
+So minimum:
+15
+
+🎯 Actual goal
+Aisi path choose karo jisme stairs ki total cost minimum ho aur TOP tak pahunch jao.
+Bas. Question mein stairs climb karne ka minimum cost nikalna hai.
+---------------------------------------------------------------------------------------
+
+Core idea : 
+Har stair ke liye socho:
+"Agar mujhe is stair tak pahunchna hai, toh minimum kitna cost lagega?"
+
+Maan lo:
+cost = [10, 15, 20]
+
+Hum dp[i] ka matlab rakhenge:
+dp[i] = stair i tak pahunchne ka minimum cost
+
+Stair i par kaise aa sakte ho?
+Sirf 2 ways:
+i-1 → i       (1 step)
+i-2 → i       (2 steps)
+
+Toh dono mein se cheaper wala:
+dp[i] = cost[i] + min(dp[i-1], dp[i-2])
+
+Example
+cost = [10, 15, 20]
+
+dp[0] = 10
+dp[1] = 15
+
+dp[2] = 20 + min(15, 10)
+     = 30
+
+Lekin TOP n index par hai, aur top tak hum n-1 ya n-2 stair se aa sakte hain.
+So final:
+answer = min(dp[n-1], dp[n-2])
+
+For [10,15,20]:
+min(dp[2], dp[1])
+= min(30, 15)
+= 15
+
+Bas recognition yaad rakh
+1 ya 2 steps → previous 2 states → min()
+dp[i] = cost[i] + min(dp[i-1], dp[i-2])
+
+Yahi poora DP idea hai.
+---------------------------------------------------
+
+Final Idea:
+Maan le:
+cost = [10, 15, 20, 25]
+
+Stairs:
+stair 0     stair 1     stair 2     stair 3
+ 10           15           20           25
+  🧍
+
+Hum stair 3 par pahunchne ka minimum cost nikal rahe hain.
+Stair 3 par kaise aa sakte ho?
+Tum ek baar mein sirf 1 ya 2 stairs jump kar sakte ho.
+Isliye stair 3 par aane ke sirf 2 possible ways hain:
+Way 1:
+stair 2 ──1 step──> stair 3
+
+Way 2:
+stair 1 ──2 steps──> stair 3
+
+Bas. Isi ko i-1 aur i-2 bol rahe hain.
+Ab cost samajh
+Suppose:
+dp[2] = 30
+
+Matlab:
+Stair 2 tak pahunchne mein minimum ₹30 laga.
+
+Aur:
+dp[1] = 15
+
+Matlab:
+Stair 1 tak pahunchne mein minimum ₹15 laga.
+
+Ab stair 3 par jaana hai.
+Way 1: Stair 2 se
+stair 2 → stair 3
+
+₹30 + stair 3 ki cost ₹25
+= ₹55
+
+Way 2: Stair 1 se
+stair 1 → stair 3
+
+₹15 + stair 3 ki cost ₹25
+= ₹40
+
+Obviously ₹40 cheaper hai.
+Isliye:
+dp[3] = 25 + min(dp[2], dp[1])
+      = 25 + min(30, 15)
+      = 40
+
+Ab formula ko human language mein padho
+dp[i] = cost[i] + min(dp[i-1], dp[i-2]);
+
+Iska matlab:
+Stair i par pahunchne ke liye, i-1 ya i-2 se aa sakte hain. Jo route pehle se cheaper hai, uska cost lo, aur current stair i ki cost add kar do.
