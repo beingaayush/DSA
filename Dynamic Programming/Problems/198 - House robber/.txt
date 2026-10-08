@@ -1,0 +1,49 @@
+Tumhare paas houses ki array hai:
+nums = [2, 7, 9, 3, 1]
+
+Har house me kuch money hai.
+Rule: Tum do adjacent houses ko rob nahi kar sakte.
+Matlab agar house i rob kiya, toh i+1 nahi kar sakte.
+Goal: maximum money steal karna hai.
+Example:
+2  7  9  3  1
+↑     ↑     ↑
+2 + 9 + 1 = 12
+Answer = 12
+---------------------------------------------------------
+
+Core Idea
+Har house i par tumhare paas 2 choices hain:
+
+1. House rob nahi karo
+Toh previous house tak jo maximum paisa mila tha, wahi rahega:
+dp[i-1]
+
+2. House rob karo
+Toh previous house i-1 ko rob nahi kar sakte.
+Isliye:
+nums[i] + dp[i-2]
+
+Dono me maximum:
+dp[i] = max(dp[i-1], nums[i] + dp[i-2])
+
+Bas yehi poora DP hai. Human civilization ne isko bhi interview question bana diya hai.
+Example
+nums = [2, 7, 9, 3, 1]
+
+DP:
+dp[0] = 2
+dp[1] = max(2, 7) = 7
+
+dp[2] = max(7, 2 + 9)
+      = 11
+
+dp[3] = max(11, 7 + 3)
+      = 11
+
+dp[4] = max(11, 11 + 1)
+      = 12
+
+so :- [2, 7, 11, 11, 12]
+Answer = 12
+ 
