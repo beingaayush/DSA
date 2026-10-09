@@ -1,0 +1,24 @@
+Statement : 
+
+You are given an integer array nums, where nums[i] represents the money in the \(i^{th}\) house.
+Houses are arranged in a circle, meaning the first and last houses are adjacent.
+You cannot rob two adjacent houses. Return the maximum amount of money you can rob without alerting the police.
+
+Core Idea : 
+
+The problem is similar to LeetCode 198 (House Robber), but there is one extra restriction: the first and last houses are also adjacent.
+Trick: We cannot rob both the first and last houses.
+Therefore, solve two separate cases:
+1. Rob houses from index 0 to n-2 (exclude the last house).
+2. Rob houses from index 1 to n-1 (exclude the first house).
+Return the maximum of these two answers.
+For each case, use the same DP logic as House Robber I.
+
+
+Complexity
+- Time: \(O(n)\)
+- Space: \(O(n)\)
+DP recurrence to remember:  dp[i]=\max(dp[i-1], nums[i]+dp[i-2])
+
+Either skip the current house or rob it and add the best amount from two houses back.
+The circular arrangement just forces us to solve these two cases separately.
